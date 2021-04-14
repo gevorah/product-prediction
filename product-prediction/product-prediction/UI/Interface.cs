@@ -16,5 +16,39 @@ namespace product_prediction.UI
         {
             InitializeComponent();
         }
-    }
+
+		private void Categories(string s)
+		{
+			if (s.Equals("Branch"))
+			{
+				cbFilter.Items.Clear();
+				cbFilter.Items.Add("Valid");
+				cbFilter.Items.Add("Relict");
+			}
+			else if (s.Equals("Customer Type"))
+			{
+				cbFilter.Items.Clear();
+				cbFilter.Items.Add("Fell");
+				cbFilter.Items.Add("Found");
+
+			}
+
+			else if (s.Equals("Product Line"))
+			{
+				cbFilter.Items.Clear();
+				cbFilter.Items.Add("Fell");
+				cbFilter.Items.Add("Found");
+
+			}
+
+			else if (s.Equals("Payment"))
+			{
+				cbFilter.Items.Clear();
+				cbFilter.Items.Add("Fell");
+				cbFilter.Items.Add("Found");
+
+			}
+
+		}
+	}
 }

@@ -1,0 +1,10 @@
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\product-prediction.exe.config
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\product-prediction.exe
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\product-prediction.pdb
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csprojAssemblyReference.cache
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product_prediction.Properties.Resources.resources
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product_prediction.UI.Interface.resources
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.GenerateResource.cache
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.CoreCompileInputs.cache
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.exe
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.pdb

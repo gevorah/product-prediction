@@ -30,10 +30,10 @@ namespace product_prediction.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.Chart pieChart;
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Chart pieChart;
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -45,16 +45,33 @@ namespace product_prediction.UI
             this.label2 = new System.Windows.Forms.Label();
             this.columsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pointChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             pieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(pieChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesRecord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.columsChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pointChart)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pieChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            pieChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            pieChart.Legends.Add(legend1);
+            pieChart.Location = new System.Drawing.Point(296, 532);
+            pieChart.Name = "pieChart";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            pieChart.Series.Add(series1);
+            pieChart.Size = new System.Drawing.Size(232, 182);
+            pieChart.TabIndex = 4;
+            pieChart.Text = "chart2";
             // 
             // label1
             // 
@@ -90,36 +107,19 @@ namespace product_prediction.UI
             // 
             // columsChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.columsChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.columsChart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.columsChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.columsChart.Legends.Add(legend2);
             this.columsChart.Location = new System.Drawing.Point(31, 532);
             this.columsChart.Name = "columsChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.columsChart.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.columsChart.Series.Add(series2);
             this.columsChart.Size = new System.Drawing.Size(232, 182);
             this.columsChart.TabIndex = 3;
             this.columsChart.Text = "chart1";
-            // 
-            // pieChart
-            // 
-            chartArea2.Name = "ChartArea1";
-            pieChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            pieChart.Legends.Add(legend2);
-            pieChart.Location = new System.Drawing.Point(296, 532);
-            pieChart.Name = "pieChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            pieChart.Series.Add(series2);
-            pieChart.Size = new System.Drawing.Size(232, 182);
-            pieChart.TabIndex = 4;
-            pieChart.Text = "chart2";
             // 
             // pointChart
             // 
@@ -138,21 +138,39 @@ namespace product_prediction.UI
             this.pointChart.TabIndex = 5;
             this.pointChart.Text = "chart3";
             // 
-            // comboBox1
+            // cbCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(179, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Items.AddRange(new object[] {
+            "Invoice id",
+            "Branch",
+            "City",
+            "Customer Type",
+            "Gender ",
+            "Product Line",
+            "Unit Price",
+            "Quantity",
+            "Tax",
+            "Total",
+            "Date",
+            "Time",
+            "Payment",
+            "COGS",
+            "Gross margin percentage",
+            "Gross income",
+            "Rating"});
+            this.cbCategory.Location = new System.Drawing.Point(179, 109);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(121, 21);
+            this.cbCategory.TabIndex = 6;
             // 
-            // comboBox2
+            // cbFilter
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(512, 111);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 7;
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Location = new System.Drawing.Point(512, 111);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(121, 21);
+            this.cbFilter.TabIndex = 7;
             // 
             // label3
             // 
@@ -186,8 +204,8 @@ namespace product_prediction.UI
             this.ClientSize = new System.Drawing.Size(946, 749);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbFilter);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.pointChart);
             this.Controls.Add(pieChart);
             this.Controls.Add(this.columsChart);
@@ -196,9 +214,9 @@ namespace product_prediction.UI
             this.Controls.Add(this.label1);
             this.Name = "Interface";
             this.Text = "Sales Control";
+            ((System.ComponentModel.ISupportInitialize)(pieChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesRecord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.columsChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pointChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,8 +230,8 @@ namespace product_prediction.UI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataVisualization.Charting.Chart columsChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart pointChart;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
     }
