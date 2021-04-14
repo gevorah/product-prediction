@@ -1,7 +1,7 @@
 ﻿
-namespace product_prediction
+namespace product_prediction.UI
 {
-    partial class Form1
+    partial class Interface
     {
         /// <summary>
         ///  Required designer variable.
