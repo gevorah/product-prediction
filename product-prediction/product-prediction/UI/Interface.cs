@@ -16,6 +16,5 @@ namespace product_prediction.UI
         {
             InitializeComponent();
         }
-
     }
 }
