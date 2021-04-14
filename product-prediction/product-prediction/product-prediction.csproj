@@ -47,8 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Company.cs" />
     <Compile Include="Model\Sale.cs" />
+    <Compile Include="Model\Company.cs" />
     <Compile Include="UI\Interface.cs">
       <SubType>Form</SubType>
     </Compile>
