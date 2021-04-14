@@ -30,13 +30,192 @@ namespace product_prediction.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Chart pieChart;
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.label1 = new System.Windows.Forms.Label();
+            this.salesRecord = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.columsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pointChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            pieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.salesRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.columsChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pointChart)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(289, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 41);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Sales Control";
+            // 
+            // salesRecord
+            // 
+            this.salesRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.salesRecord.Location = new System.Drawing.Point(47, 152);
+            this.salesRecord.Name = "salesRecord";
+            this.salesRecord.Size = new System.Drawing.Size(724, 266);
+            this.salesRecord.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Font = new System.Drawing.Font("Century Schoolbook", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(40, 474);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(336, 41);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Statistical Charts";
+            // 
+            // columsChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.columsChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.columsChart.Legends.Add(legend1);
+            this.columsChart.Location = new System.Drawing.Point(31, 532);
+            this.columsChart.Name = "columsChart";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.columsChart.Series.Add(series1);
+            this.columsChart.Size = new System.Drawing.Size(232, 182);
+            this.columsChart.TabIndex = 3;
+            this.columsChart.Text = "chart1";
+            // 
+            // pieChart
+            // 
+            chartArea2.Name = "ChartArea1";
+            pieChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            pieChart.Legends.Add(legend2);
+            pieChart.Location = new System.Drawing.Point(296, 532);
+            pieChart.Name = "pieChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            pieChart.Series.Add(series2);
+            pieChart.Size = new System.Drawing.Size(232, 182);
+            pieChart.TabIndex = 4;
+            pieChart.Text = "chart2";
+            // 
+            // pointChart
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.pointChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.pointChart.Legends.Add(legend3);
+            this.pointChart.Location = new System.Drawing.Point(575, 532);
+            this.pointChart.Name = "pointChart";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.pointChart.Series.Add(series3);
+            this.pointChart.Size = new System.Drawing.Size(232, 182);
+            this.pointChart.TabIndex = 5;
+            this.pointChart.Text = "chart3";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(179, 109);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(512, 111);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(88, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 19);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Category";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(368, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 19);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Filter Category";
+            // 
+            // Interface
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(946, 749);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.pointChart);
+            this.Controls.Add(pieChart);
+            this.Controls.Add(this.columsChart);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.salesRecord);
+            this.Controls.Add(this.label1);
+            this.Name = "Interface";
+            this.Text = "Sales Control";
+            ((System.ComponentModel.ISupportInitialize)(this.salesRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.columsChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pointChart)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView salesRecord;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart columsChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart pointChart;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
