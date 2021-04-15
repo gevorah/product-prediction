@@ -29,6 +29,12 @@ namespace product_prediction.UI
 			cp = new Company();
 			dt = cp.GetDataTable();
 			data.DataSource = dt;
+			cbFilter.Visible = false;
+			labelFilter.Visible = false;
+			labelRange.Visible = false;
+			labelTo.Visible = false;
+			Range1.Visible = false;
+			Range2.Visible = false;
 		}
 
 		private void Categories(string s)
@@ -78,7 +84,7 @@ namespace product_prediction.UI
 
 			}
 		}
-		private void attribute_SelectedIndexChanged(object sender, EventArgs e)
+		private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			string selected = cbCategory.Text;
 			if (selected.Equals("Gender") || selected.Equals("Payment") || selected.Equals("Product Line") || selected.Equals("Customer Type") || selected.Equals("Branch"))
@@ -91,7 +97,15 @@ namespace product_prediction.UI
 				Range1.Visible = false;
 				Range2.Visible = false;
 			}
-
+            else
+            {
+				cbFilter.Visible = false;
+				labelFilter.Visible = false;
+				labelRange.Visible = true;
+				labelTo.Visible = true;
+				Range1.Visible = true;
+				Range2.Visible = true;
+			}
 		}
 
 		private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)

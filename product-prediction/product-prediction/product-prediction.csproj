@@ -49,11 +49,11 @@
   <ItemGroup>
     <Compile Include="Model\Sale.cs" />
     <Compile Include="Model\Company.cs" />
-    <Compile Include="UI\Interface.cs">
+    <Compile Include="UI\Inteface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Interface.Designer.cs">
-      <DependentUpon>Interface.cs</DependentUpon>
+    <Compile Include="UI\Inteface.Designer.cs">
+      <DependentUpon>Inteface.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,8 +66,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UI\Interface.resx">
-      <DependentUpon>Interface.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Inteface.resx">
+      <DependentUpon>Inteface.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
