@@ -240,25 +240,25 @@ namespace product_prediction.UI
 			else if (category.Equals("Tax"))
 			{
 
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Tax 5%", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Tax 5%", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
 
 
 			}
 			else if (category.Equals("Total"))
 			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Total", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Total", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
 			}
 			else if (category.Equals("COGS"))
 			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "cogs", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "cogs", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
 			}
 			else if (category.Equals("Gross income"))
 			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "gross income", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "gross income", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
 			}
 			else if (category.Equals("Rating"))
 			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Rating", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Rating", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
 			}else if (category.Equals("DateTime"))
             {
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "DateTime", DateTime.Parse(Range1.Text), DateTime.Parse(Range2.Text)); ;
