@@ -39,13 +39,24 @@ namespace product_prediction.Model
 					{
 						for (int k = 0; k < sl.Length; k++)
 						{
-							dt.Columns.Add(sl[k]);
+							if (sl[k].Equals("Date")) dt.Columns.Add(sl[k] + sl[k + 1], typeof(DateTime));
+                            else if (!sl[k].Equals("Time"))
+                            {
+								if (sl[k].Equals("Invoice ID") || sl[k].Equals("Gender") || sl[k].Equals("Payment") || sl[k].Equals("Product line") 
+								|| sl[k].Equals("Customer type") || sl[k].Equals("Branch") || sl[k].Equals("City")) dt.Columns.Add(sl[k]);
+                           		else dt.Columns.Add(sl[k], typeof(double));
+                            }
+							
 						}
 						f = false;
 					}
 					else
 					{
-						dt.Rows.Add(sl);
+						dt.Rows.Add(sl[0], sl[1], sl[2], sl[3], sl[4], sl[5], Convert.ToDouble(sl[6], CultureInfo.InvariantCulture),
+							Convert.ToInt32(sl[7]), Convert.ToDouble(sl[8], CultureInfo.InvariantCulture), Convert.ToDouble(sl[9], CultureInfo.InvariantCulture),
+							DateTime.Parse(sl[10] + " " + sl[11], new CultureInfo("en-US", false)), sl[12], Convert.ToDouble(sl[13], CultureInfo.InvariantCulture),
+							Convert.ToDouble(sl[14], CultureInfo.InvariantCulture), Convert.ToDouble(sl[15], CultureInfo.InvariantCulture), Convert.ToDouble(sl[16], CultureInfo.InvariantCulture)
+							);
 						createSale(sl);
 					}
 				}
@@ -59,9 +70,10 @@ namespace product_prediction.Model
 		private void createSale(string[] sl)
         {
 			sales.Add(new Sale(
-                sl[0], Convert.ToChar(sl[1]), sl[2], sl[3], sl[4], sl[5], Convert.ToDouble(sl[6]), 
-				Convert.ToInt32(sl[7]), Convert.ToDouble(sl[8]), Convert.ToDouble(sl[9]), DateTime.Parse(sl[10]+" "+sl[11], new CultureInfo("en-US", false)), 
-				sl[12], Convert.ToDouble(sl[13]), Convert.ToDouble(sl[14]), Convert.ToDouble(sl[15]), Convert.ToDouble(sl[16])
+                sl[0], Convert.ToChar(sl[1]), sl[2], sl[3], sl[4], sl[5], Convert.ToDouble(sl[6], CultureInfo.InvariantCulture), 
+				Convert.ToInt32(sl[7]), Convert.ToDouble(sl[8], CultureInfo.InvariantCulture), Convert.ToDouble(sl[9], CultureInfo.InvariantCulture), 
+				DateTime.Parse(sl[10]+" "+sl[11], new CultureInfo("en-US", false)), sl[12], Convert.ToDouble(sl[13], CultureInfo.InvariantCulture), 
+				Convert.ToDouble(sl[14], CultureInfo.InvariantCulture), Convert.ToDouble(sl[15], CultureInfo.InvariantCulture), Convert.ToDouble(sl[16], CultureInfo.InvariantCulture)
 				));
         }
 

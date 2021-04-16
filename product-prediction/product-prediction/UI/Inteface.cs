@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using product_prediction.Model;
 using System.IO;
 using System.Globalization;
+using System.Collections;
 
 namespace product_prediction.UI
 {
@@ -37,6 +38,7 @@ namespace product_prediction.UI
 			Range1.Visible = false;
 			Range2.Visible = false;
 			FilterRange.Visible = false;
+			
 		}
 
 		private void Categories(string s)
@@ -48,7 +50,7 @@ namespace product_prediction.UI
 				cbFilter.Items.Add("B");
 				cbFilter.Items.Add("C");
 			}
-			else if (s.Equals("Customer Type"))
+			else if (s.Equals("Customer type"))
 			{
 				cbFilter.Items.Clear();
 				cbFilter.Items.Add("Member");
@@ -56,7 +58,7 @@ namespace product_prediction.UI
 
 			}
 
-			else if (s.Equals("Product Line"))
+			else if (s.Equals("Product line"))
 			{
 				cbFilter.Items.Clear();
 				cbFilter.Items.Add("Electronic accessories");
@@ -65,8 +67,6 @@ namespace product_prediction.UI
 				cbFilter.Items.Add("Health and beauty");
 				cbFilter.Items.Add("Home and lifestyle");
 				cbFilter.Items.Add("Sports and travel");
-
-
 			}
 
 			else if (s.Equals("Payment"))
@@ -92,10 +92,11 @@ namespace product_prediction.UI
 				cbFilter.Items.Add("Naypyitaw");
 			}
 		}
+
 		private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			string selected = cbCategory.Text;
-			if (selected.Equals("Gender") || selected.Equals("Payment") || selected.Equals("Product Line") || selected.Equals("Customer Type") || selected.Equals("Branch") || selected.Equals("City"))
+			if (selected.Equals("Gender") || selected.Equals("Payment") || selected.Equals("Product line") || selected.Equals("Customer type") || selected.Equals("Branch") || selected.Equals("City"))
 			{
 				Categories(selected);
 				cbFilter.Visible = true;
@@ -107,7 +108,6 @@ namespace product_prediction.UI
 			}
             else
             {
-				Range(selected);
 				cbFilter.Visible = false;
 				labelFilter.Visible = false;
 				labelRange.Visible = true;
@@ -202,11 +202,6 @@ namespace product_prediction.UI
 			
 		}
 
-		private void Range(string s)
-		{
-			
-		}
-
         private void NoFilter_Click(object sender, EventArgs e)
         {
 			dt.DefaultView.RowFilter = string.Empty;
@@ -227,7 +222,7 @@ namespace product_prediction.UI
         private void FilterRange_Click(object sender, EventArgs e)
         {
 			string category = cbCategory.Text;
-			if (category.Equals("Unit Price"))
+			if (category.Equals("Unit price"))
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Unit price", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
 			}
@@ -257,10 +252,6 @@ namespace product_prediction.UI
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "cogs", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
 			}
-			else if (category.Equals("Gross margin percentage"))
-			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "gross margin percentage", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
-			}
 			else if (category.Equals("Gross income"))
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "gross income", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
@@ -268,9 +259,9 @@ namespace product_prediction.UI
 			else if (category.Equals("Rating"))
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Rating", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
-			}else if (category.Equals("Date"))
+			}else if (category.Equals("DateTime"))
             {
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Date", DateTime.Parse(Range1.Text), DateTime.Parse(Range2.Text)); ;
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "DateTime", DateTime.Parse(Range1.Text), DateTime.Parse(Range2.Text)); ;
 			}
 		}
 
