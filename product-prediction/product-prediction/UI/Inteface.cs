@@ -231,8 +231,8 @@ namespace product_prediction.UI
 				int r1 = int.Parse(Range1.Text);
 				if (r1 == 0)
 				{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", 1, int.Parse(Range2.Text)); ;
-				}else
+					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", 1, int.Parse(Range2.Text)); ;
+				} else
 				{
 					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", int.Parse(Range1.Text), int.Parse(Range2.Text)); ;
 				}
@@ -259,21 +259,16 @@ namespace product_prediction.UI
 			else if (category.Equals("Rating"))
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Rating", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
-			}else if (category.Equals("DateTime"))
-            {
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "DateTime", DateTime.Parse(Range1.Text), DateTime.Parse(Range2.Text)); ;
+			} else if (category.Equals("DateTime"))
+			{
+				String d1 = "#"+ Range1.Text + "#";
+				String d2 = "#" + Range2.Text + "#";
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.DateTime') >= '{1}' AND Convert([{0}], 'System.DateTime') <= '{2}'", "DateTime", DateTime.Parse(d1), DateTime.Parse(d2)); ;
 			}
+			
 		}
 
-		/*
-		  foreach(DataRow datarow in dt.Rows)
-                {
-					foreach(var item in datarow.ItemArray)
-                    {
-						Console.WriteLine(item);
-                    }
-                }
-		*/
+		
     }
 
        
