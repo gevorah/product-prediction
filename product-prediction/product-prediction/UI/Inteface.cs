@@ -81,13 +81,19 @@ namespace product_prediction.UI
 				cbFilter.Items.Clear();
 				cbFilter.Items.Add("Male");
 				cbFilter.Items.Add("Female");
-
+			}
+			else if (s.Equals("City"))
+            {
+				cbFilter.Items.Clear();
+				cbFilter.Items.Add("Yangon");
+				cbFilter.Items.Add("Mandalay");
+				cbFilter.Items.Add("Naypyitaw");
 			}
 		}
 		private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			string selected = cbCategory.Text;
-			if (selected.Equals("Gender") || selected.Equals("Payment") || selected.Equals("Product Line") || selected.Equals("Customer Type") || selected.Equals("Branch"))
+			if (selected.Equals("Gender") || selected.Equals("Payment") || selected.Equals("Product Line") || selected.Equals("Customer Type") || selected.Equals("Branch") || selected.Equals("City"))
 			{
 				Categories(selected);
 				cbFilter.Visible = true;
@@ -99,6 +105,7 @@ namespace product_prediction.UI
 			}
             else
             {
+				Range(selected);
 				cbFilter.Visible = false;
 				labelFilter.Visible = false;
 				labelRange.Visible = true;
@@ -119,6 +126,82 @@ namespace product_prediction.UI
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Gender", cbFilter.Text); ;
 			}
+			else if (s.Equals("Member"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Customer type", cbFilter.Text); ;
+			}
+			else if (s.Equals("Normal"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Customer type", cbFilter.Text); ;
+			}
+			else if (s.Equals("A"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Branch", cbFilter.Text); ;
+			}
+			else if (s.Equals("B"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Branch", cbFilter.Text); ;
+			}
+			else if (s.Equals("C"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Branch", cbFilter.Text); ;
+			}
+			else if (s.Equals("Cash"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Payment", cbFilter.Text); ;
+			}
+			else if (s.Equals("Ewallet"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Payment", cbFilter.Text); ;
+			}
+			else if (s.Equals("Credit Card"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Payment", cbFilter.Text); ;
+			}
+			
+			else if (s.Equals("Fashion accessories"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Product line", cbFilter.Text); ;
+			}
+			else if (s.Equals("Electronic accessories"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Product line", cbFilter.Text); ;
+			}
+			else if (s.Equals("Food and beverages"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Product line", cbFilter.Text); ;
+			}
+			else if (s.Equals("Health and beauty"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Product line", cbFilter.Text); ;
+			}
+			else if (s.Equals("Home and lifestyle"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Product line", cbFilter.Text); ;
+			}
+			else if (s.Equals("Sports and travel"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Product line", cbFilter.Text); ;
+			}
+			else if (s.Equals("Yangon"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "City", cbFilter.Text); ;
+			}
+			else if (s.Equals("Mandalay"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "City", cbFilter.Text); ;
+			}
+			else if (s.Equals("Naypyitaw"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "City", cbFilter.Text); ;
+			}
+
+			
+		}
+
+		private void Range(string s)
+		{
+			//Metodo para los filtros por rango
 		}
 	}
 
