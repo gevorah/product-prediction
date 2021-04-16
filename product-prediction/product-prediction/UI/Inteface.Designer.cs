@@ -54,6 +54,7 @@ namespace product_prediction.UI
             this.labelTo = new System.Windows.Forms.Label();
             this.Range1 = new System.Windows.Forms.TextBox();
             this.NoFilter = new System.Windows.Forms.Button();
+            this.FilterRange = new System.Windows.Forms.Button();
             pieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(pieChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
@@ -243,7 +244,7 @@ namespace product_prediction.UI
             // 
             // NoFilter
             // 
-            this.NoFilter.Location = new System.Drawing.Point(806, 113);
+            this.NoFilter.Location = new System.Drawing.Point(826, 114);
             this.NoFilter.Name = "NoFilter";
             this.NoFilter.Size = new System.Drawing.Size(75, 23);
             this.NoFilter.TabIndex = 15;
@@ -251,12 +252,23 @@ namespace product_prediction.UI
             this.NoFilter.UseVisualStyleBackColor = true;
             this.NoFilter.Click += new System.EventHandler(this.NoFilter_Click);
             // 
+            // FilterRange
+            // 
+            this.FilterRange.Location = new System.Drawing.Point(732, 116);
+            this.FilterRange.Name = "FilterRange";
+            this.FilterRange.Size = new System.Drawing.Size(75, 23);
+            this.FilterRange.TabIndex = 16;
+            this.FilterRange.Text = "Filter";
+            this.FilterRange.UseVisualStyleBackColor = true;
+            this.FilterRange.Click += new System.EventHandler(this.FilterRange_Click);
+            // 
             // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(946, 749);
+            this.Controls.Add(this.FilterRange);
             this.Controls.Add(this.NoFilter);
             this.Controls.Add(this.Range1);
             this.Controls.Add(this.labelTo);
@@ -299,6 +311,7 @@ namespace product_prediction.UI
         private System.Windows.Forms.Label labelTo;
         private System.Windows.Forms.TextBox Range1;
         private System.Windows.Forms.Button NoFilter;
+        private System.Windows.Forms.Button FilterRange;
     }
 }
 

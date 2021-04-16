@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using product_prediction.Model;
 using System.IO;
+using System.Globalization;
 
 namespace product_prediction.UI
 {
@@ -35,6 +36,7 @@ namespace product_prediction.UI
 			labelTo.Visible = false;
 			Range1.Visible = false;
 			Range2.Visible = false;
+			FilterRange.Visible = false;
 		}
 
 		private void Categories(string s)
@@ -112,6 +114,7 @@ namespace product_prediction.UI
 				labelTo.Visible = true;
 				Range1.Visible = true;
 				Range2.Visible = true;
+				FilterRange.Visible = true;
 			}
 		}
 
@@ -201,12 +204,11 @@ namespace product_prediction.UI
 
 		private void Range(string s)
 		{
-			//Metodo para los filtros por rango
+			
 		}
 
         private void NoFilter_Click(object sender, EventArgs e)
         {
-			//dt.Clear();
 			dt.DefaultView.RowFilter = string.Empty;
 			dt = cp.GetDataTable();
 			data.DataSource = dt;
@@ -216,6 +218,16 @@ namespace product_prediction.UI
 			labelTo.Visible = false;
 			Range1.Visible = false;
 			Range2.Visible = false;
+			FilterRange.Visible = false;
+		}
+
+        private void FilterRange_Click(object sender, EventArgs e)
+        {
+			string category = cbCategory.Text;
+			if (category.Equals("Unit Price"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Unit price", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+			}
 		}
     }
 
