@@ -219,6 +219,9 @@ namespace product_prediction.UI
 			Range1.Visible = false;
 			Range2.Visible = false;
 			FilterRange.Visible = false;
+			cbCategory.ResetText();
+			Range1.Clear();
+			Range2.Clear();
 		}
 
         private void FilterRange_Click(object sender, EventArgs e)
@@ -230,9 +233,56 @@ namespace product_prediction.UI
 			}
 			else if (category.Equals("Quantity"))
 			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+				int r1 = int.Parse(Range1.Text);
+				if (r1 == 0)
+				{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", 1, int.Parse(Range2.Text)); ;
+				}else
+				{
+					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", int.Parse(Range1.Text), int.Parse(Range2.Text)); ;
+				}
+			}
+			else if (category.Equals("Tax"))
+			{
+
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Tax 5%", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+
+
+			}
+			else if (category.Equals("Total"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Total", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+			}
+			else if (category.Equals("COGS"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "cogs", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+			}
+			else if (category.Equals("Gross margin percentage"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "gross margin percentage", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+			}
+			else if (category.Equals("Gross income"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "gross income", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+			}
+			else if (category.Equals("Rating"))
+			{
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Rating", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+			}else if (category.Equals("Date"))
+            {
+				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Date", DateTime.Parse(Range1.Text), DateTime.Parse(Range2.Text)); ;
 			}
 		}
+
+		/*
+		  foreach(DataRow datarow in dt.Rows)
+                {
+					foreach(var item in datarow.ItemArray)
+                    {
+						Console.WriteLine(item);
+                    }
+                }
+		*/
     }
 
        
