@@ -203,7 +203,21 @@ namespace product_prediction.UI
 		{
 			//Metodo para los filtros por rango
 		}
-	}
+
+        private void NoFilter_Click(object sender, EventArgs e)
+        {
+			//dt.Clear();
+			dt.DefaultView.RowFilter = string.Empty;
+			dt = cp.GetDataTable();
+			data.DataSource = dt;
+			cbFilter.Visible = false;
+			labelFilter.Visible = false;
+			labelRange.Visible = false;
+			labelTo.Visible = false;
+			Range1.Visible = false;
+			Range2.Visible = false;
+		}
+    }
 
        
     }

@@ -31,15 +31,15 @@ namespace product_prediction.UI
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.Chart pieChart;
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.data = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@ namespace product_prediction.UI
             this.Range2 = new System.Windows.Forms.TextBox();
             this.labelTo = new System.Windows.Forms.Label();
             this.Range1 = new System.Windows.Forms.TextBox();
+            this.NoFilter = new System.Windows.Forms.Button();
             pieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(pieChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
@@ -62,17 +63,17 @@ namespace product_prediction.UI
             // 
             // pieChart
             // 
-            chartArea4.Name = "ChartArea1";
-            pieChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            pieChart.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            pieChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            pieChart.Legends.Add(legend1);
             pieChart.Location = new System.Drawing.Point(296, 532);
             pieChart.Name = "pieChart";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            pieChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            pieChart.Series.Add(series1);
             pieChart.Size = new System.Drawing.Size(232, 182);
             pieChart.TabIndex = 4;
             pieChart.Text = "chart2";
@@ -81,11 +82,11 @@ namespace product_prediction.UI
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(289, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 41);
+            this.label1.Size = new System.Drawing.Size(238, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sales Control";
             // 
@@ -101,43 +102,43 @@ namespace product_prediction.UI
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Font = new System.Drawing.Font("Century Schoolbook", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Location = new System.Drawing.Point(40, 474);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(336, 41);
+            this.label2.Size = new System.Drawing.Size(298, 39);
             this.label2.TabIndex = 2;
             this.label2.Text = "Statistical Charts";
             // 
             // columsChart
             // 
-            chartArea5.Name = "ChartArea1";
-            this.columsChart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.columsChart.Legends.Add(legend5);
+            chartArea2.Name = "ChartArea1";
+            this.columsChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.columsChart.Legends.Add(legend2);
             this.columsChart.Location = new System.Drawing.Point(31, 532);
             this.columsChart.Name = "columsChart";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.columsChart.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.columsChart.Series.Add(series2);
             this.columsChart.Size = new System.Drawing.Size(232, 182);
             this.columsChart.TabIndex = 3;
             this.columsChart.Text = "chart1";
             // 
             // pointChart
             // 
-            chartArea6.Name = "ChartArea1";
-            this.pointChart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.pointChart.Legends.Add(legend6);
+            chartArea3.Name = "ChartArea1";
+            this.pointChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.pointChart.Legends.Add(legend3);
             this.pointChart.Location = new System.Drawing.Point(575, 532);
             this.pointChart.Name = "pointChart";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.pointChart.Series.Add(series6);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.pointChart.Series.Add(series3);
             this.pointChart.Size = new System.Drawing.Size(232, 182);
             this.pointChart.TabIndex = 5;
             this.pointChart.Text = "chart3";
@@ -182,11 +183,11 @@ namespace product_prediction.UI
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Location = new System.Drawing.Point(88, 109);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 19);
+            this.label3.Size = new System.Drawing.Size(81, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Category";
             // 
@@ -194,11 +195,11 @@ namespace product_prediction.UI
             // 
             this.labelFilter.AutoSize = true;
             this.labelFilter.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelFilter.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFilter.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelFilter.Location = new System.Drawing.Point(390, 117);
             this.labelFilter.Name = "labelFilter";
-            this.labelFilter.Size = new System.Drawing.Size(138, 19);
+            this.labelFilter.Size = new System.Drawing.Size(127, 20);
             this.labelFilter.TabIndex = 10;
             this.labelFilter.Text = "Filter Category";
             // 
@@ -206,11 +207,11 @@ namespace product_prediction.UI
             // 
             this.labelRange.AutoSize = true;
             this.labelRange.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelRange.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRange.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelRange.Location = new System.Drawing.Point(466, 114);
             this.labelRange.Name = "labelRange";
-            this.labelRange.Size = new System.Drawing.Size(62, 19);
+            this.labelRange.Size = new System.Drawing.Size(62, 20);
             this.labelRange.TabIndex = 11;
             this.labelRange.Text = "Range";
             // 
@@ -225,11 +226,11 @@ namespace product_prediction.UI
             // 
             this.labelTo.AutoSize = true;
             this.labelTo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelTo.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelTo.Location = new System.Drawing.Point(628, 116);
             this.labelTo.Name = "labelTo";
-            this.labelTo.Size = new System.Drawing.Size(26, 19);
+            this.labelTo.Size = new System.Drawing.Size(25, 20);
             this.labelTo.TabIndex = 13;
             this.labelTo.Text = "to";
             // 
@@ -240,12 +241,23 @@ namespace product_prediction.UI
             this.Range1.Size = new System.Drawing.Size(64, 20);
             this.Range1.TabIndex = 14;
             // 
+            // NoFilter
+            // 
+            this.NoFilter.Location = new System.Drawing.Point(806, 113);
+            this.NoFilter.Name = "NoFilter";
+            this.NoFilter.Size = new System.Drawing.Size(75, 23);
+            this.NoFilter.TabIndex = 15;
+            this.NoFilter.Text = "No filter";
+            this.NoFilter.UseVisualStyleBackColor = true;
+            this.NoFilter.Click += new System.EventHandler(this.NoFilter_Click);
+            // 
             // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(946, 749);
+            this.Controls.Add(this.NoFilter);
             this.Controls.Add(this.Range1);
             this.Controls.Add(this.labelTo);
             this.Controls.Add(this.Range2);
@@ -286,6 +298,7 @@ namespace product_prediction.UI
         private System.Windows.Forms.TextBox Range2;
         private System.Windows.Forms.Label labelTo;
         private System.Windows.Forms.TextBox Range1;
+        private System.Windows.Forms.Button NoFilter;
     }
 }
 
