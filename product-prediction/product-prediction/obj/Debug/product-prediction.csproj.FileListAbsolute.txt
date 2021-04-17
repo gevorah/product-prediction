@@ -28,3 +28,13 @@ C:\Users\aleja\OneDrive\Escritorio\5 Semestre\Proyecto Integrador 1\product-pred
 C:\Users\aleja\OneDrive\Escritorio\5 Semestre\Proyecto Integrador 1\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.CoreCompileInputs.cache
 C:\Users\aleja\OneDrive\Escritorio\5 Semestre\Proyecto Integrador 1\product-prediction\product-prediction\obj\Debug\product-prediction.exe
 C:\Users\aleja\OneDrive\Escritorio\5 Semestre\Proyecto Integrador 1\product-prediction\product-prediction\obj\Debug\product-prediction.pdb
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\product-prediction.exe.config
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\product-prediction.exe
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\product-prediction.pdb
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csprojAssemblyReference.cache
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product_prediction.Properties.Resources.resources
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product_prediction.UI.Interface.resources
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.GenerateResource.cache
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.CoreCompileInputs.cache
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.exe
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.pdb

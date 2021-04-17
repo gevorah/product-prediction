@@ -81,7 +81,7 @@ namespace product_prediction.Model
 		public int[,] count()
         {
 			DataRow[] dr = dt.Select();
-			int[,] c = new int[13, 1];
+			int[,] c = new int[6, 6];
 			for (int i = 0; i < dr.Length; i++)
             {
 				string pl = dr[i]["Product line"].ToString();
