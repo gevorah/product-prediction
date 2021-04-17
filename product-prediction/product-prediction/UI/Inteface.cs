@@ -39,14 +39,7 @@ namespace product_prediction.UI
 			Range1.Visible = false;
 			Range2.Visible = false;
 			FilterRange.Visible = false;
-			pieChartInitialize();
-			BarChartInitialize();
-			PointsChartInitialize();
-			LineChartInitialize();
-			ColumnChartInitialize();
-
-
-
+			Graphics();
 		}
 
 		private void Categories(string s)
@@ -282,18 +275,17 @@ namespace product_prediction.UI
 
 		private void Graphics()
 		{
-			pieChartInitialize();//Product line
-			BarChartInitialize();// Gender
-			PointsChartInitialize(); //Customer type
-			LineChartInitialize();// Branch
-			ColumnChartInitialize(); //Payment
-
+			int[,] stat = cp.count();
+			pieChartInitialize(stat);//Product line
+			BarChartInitialize(stat);// Gender
+			PointsChartInitialize(stat); //Customer type
+			LineChartInitialize(stat);// Branch
+			ColumnChartInitialize(stat); //Payment
+			
 		}
 
-		private void pieChartInitialize()
+		private void pieChartInitialize(int[,] stat)
 		{
-
-
 			pieChart.Series.Clear();
 			pieChart.Legends.Clear();
 
@@ -306,21 +298,21 @@ namespace product_prediction.UI
 			//Add a new chart-series
 			string seriesname = "Product line";
 			pieChart.Series.Add(seriesname);
-			//set the chart-type to "Pie"
+			//set the chart-type
 			pieChart.Series[seriesname].ChartType = SeriesChartType.Pie;
 			pieChart.Series[seriesname]["PieLabelStyle"] = "Disabled";
-			pieChart.Series[seriesname].Points.AddXY("Electronic accessories", cp.count()[0, 0]);
-			pieChart.Series[seriesname].Points.AddXY("Fashion accessories", cp.count()[0, 1]);
-			pieChart.Series[seriesname].Points.AddXY("Food and beverages", cp.count()[0, 2]);
-			pieChart.Series[seriesname].Points.AddXY("Health and beauty", cp.count()[0, 3]);
-			pieChart.Series[seriesname].Points.AddXY("Home and lifestyle", cp.count()[0, 4]);
-			pieChart.Series[seriesname].Points.AddXY("Sports and travel", cp.count()[0, 5]);
+			pieChart.Series[seriesname].Points.AddXY("Electronic accessories", stat[0, 0]);
+			pieChart.Series[seriesname].Points.AddXY("Fashion accessories", stat[0, 1]);
+			pieChart.Series[seriesname].Points.AddXY("Food and beverages", stat[0, 2]);
+			pieChart.Series[seriesname].Points.AddXY("Health and beauty", stat[0, 3]);
+			pieChart.Series[seriesname].Points.AddXY("Home and lifestyle", stat[0, 4]);
+			pieChart.Series[seriesname].Points.AddXY("Sports and travel", stat[0, 5]);
 
 
 
 		}
 
-		private void BarChartInitialize()
+		private void BarChartInitialize(int[,] stat)
 		{
 			barChart.Series.Clear();
 			barChart.Legends.Clear();
@@ -336,18 +328,18 @@ namespace product_prediction.UI
 			//Add a new chart-series
 			string seriesname = "Gender";
 			barChart.Series.Add(seriesname);
-			//set the chart-type to "bar"
+			//set the chart-type
 			barChart.Series[seriesname].ChartType = SeriesChartType.Bar;
 			barChart.Series[seriesname]["BarLabelStyle"] = "Disabled";
 
 			//Add some datapoints so the series. in this case you can pass the values to this method
-			barChart.Series[seriesname].Points.AddXY("Male", cp.count()[1, 0]);
-			barChart.Series[seriesname].Points.AddXY("Female", cp.count()[1, 1]);
+			barChart.Series[seriesname].Points.AddXY("Male", stat[1, 0]);
+			barChart.Series[seriesname].Points.AddXY("Female", stat[1, 1]);
 
 
 
 		}
-		public void PointsChartInitialize()
+		public void PointsChartInitialize(int[,] stat)
 		{
 			pointChart.Series.Clear();
 			pointChart.Legends.Clear();
@@ -363,16 +355,16 @@ namespace product_prediction.UI
 			//Add a new chart-series
 			string seriesname = "Customer Type";
 			pointChart.Series.Add(seriesname);
-			//set the chart-type to "Point"
+			//set the chart-type
 			pointChart.Series[seriesname].ChartType = SeriesChartType.Point;
 			pointChart.Series[seriesname]["PointLabelStyle"] = "Disabled";
 
 			//Add some datapoints so the series. in this case you can pass the values to this method
-			pointChart.Series[seriesname].Points.AddXY("Normal", cp.count()[2, 0]);
-			pointChart.Series[seriesname].Points.AddXY("Member", cp.count()[2, 1]);
+			pointChart.Series[seriesname].Points.AddXY("Normal", stat[2, 0]);
+			pointChart.Series[seriesname].Points.AddXY("Member", stat[2, 1]);
 
 		}
-		private void LineChartInitialize()
+		private void LineChartInitialize(int[,] stat)
 		{
 			lineChart.Series.Clear();
 			lineChart.Legends.Clear();
@@ -388,18 +380,18 @@ namespace product_prediction.UI
 			//Add a new chart-series
 			string seriesname = "Branch";
 			lineChart.Series.Add(seriesname);
-			//set the chart-type to "Point"
+			//set the chart-type
 			lineChart.Series[seriesname].ChartType = SeriesChartType.Line;
 			lineChart.Series[seriesname]["LineLabelStyle"] = "Disabled";
 
 			//Add some datapoints so the series. in this case you can pass the values to this method
-			lineChart.Series[seriesname].Points.AddXY("A", cp.count()[3, 0]);
-			lineChart.Series[seriesname].Points.AddXY("B", cp.count()[3, 1]);
-			lineChart.Series[seriesname].Points.AddXY("C", cp.count()[3, 2]);
+			lineChart.Series[seriesname].Points.AddXY("A", stat[3, 0]);
+			lineChart.Series[seriesname].Points.AddXY("B", stat[3, 1]);
+			lineChart.Series[seriesname].Points.AddXY("C", stat[3, 2]);
 
 		}
 
-		private void ColumnChartInitialize()
+		private void ColumnChartInitialize(int[,] stat)
 		{
 			columsChart.Series.Clear();
 			columsChart.Legends.Clear();
@@ -420,9 +412,9 @@ namespace product_prediction.UI
 			columsChart.Series[seriesname]["ColumnLabelStyle"] = "Disabled";
 
 			//Add some datapoints so the series. in this case you can pass the values to this method
-			columsChart.Series[seriesname].Points.AddXY("Cash", cp.count()[4, 0]);
-			columsChart.Series[seriesname].Points.AddXY("EWallet", cp.count()[4, 1]);
-			columsChart.Series[seriesname].Points.AddXY("Credit Card", cp.count()[4, 2]);
+			columsChart.Series[seriesname].Points.AddXY("Cash", stat[4, 0]);
+			columsChart.Series[seriesname].Points.AddXY("EWallet", stat[4, 1]);
+			columsChart.Series[seriesname].Points.AddXY("Credit Card", stat[4, 2]);
 
 		}
 	}
