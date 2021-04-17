@@ -77,26 +77,93 @@ namespace product_prediction.Model
 				));
 		}
 
-		//Product line
-		// Gender
-		 //Customer type
-		// Branch
-		 //Payment
+
 		public int[,] count()
         {
 			DataRow[] dr = dt.Select();
 			int[,] c = new int[13, 1];
 			for (int i = 0; i < dr.Length; i++)
             {
-				string pl = dr[i]["Product line"];
-				string g= 
-				string ct=
-				string b=
-				string p=
+				string pl = dr[i]["Product line"].ToString();
+				string g = dr[i]["Gender"].ToString();
+				string ct = dr[i]["Customer type"].ToString();
+				string b = dr[i]["Branch"].ToString();
+				string p = dr[i]["Payment"].ToString();
 
+				//Product line
+				if (pl.Equals("Electronic accessories"))
+				{
+					c[0, 0]++;
+				}
+				else if (pl.Equals("Fashion accessories"))
+				{
+					c[0, 1]++;
+				}
+				else if(pl.Equals("Food and beverages"))
+                {
+					c[0, 2]++;
+				}
+				else if (pl.Equals("Health and beauty"))
+                {
+					c[0, 3]++;
+				}
+				else if (pl.Equals("Home and lifestyle"))
+                {
+					c[0, 4]++;
+				}
+				else if (pl.Equals("Sports and travel"))
+                {
+					c[0, 5]++;
+				}
 
+				//Gender
+				if (g.Equals("Male"))
+				{
+					c[1, 0]++;
+				}
+				else if (g.Equals("Female"))
+				{
+					c[1, 1]++;
+				}
 
-            }
+				//Customer type
+				if (ct.Equals("Normal"))
+				{
+					c[2, 0]++;
+				}
+				else if (ct.Equals("Member"))
+				{
+					c[2, 1]++;
+				}
+
+				//Branch
+				if (b.Equals("A"))
+				{
+					c[3, 0]++;
+				}
+				else if (b.Equals("B"))
+				{
+					c[3, 1]++;
+				}
+				else if (b.Equals("C"))
+				{
+					c[3, 2]++;
+				}
+
+				//Payment
+				if (p.Equals("Cash"))
+				{
+					c[4, 0]++;
+				}
+				else if (p.Equals("Ewallet"))
+				{
+					c[4, 1]++;
+				}
+				else if (p.Equals("Credit card"))
+				{
+					c[4, 2]++;
+				}
+			}
 			return c;
 		}
 
