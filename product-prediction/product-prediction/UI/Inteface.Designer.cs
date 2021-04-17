@@ -109,15 +109,16 @@ namespace product_prediction.UI
             this.columsChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.columsChart.Legends.Add(legend1);
-            this.columsChart.Location = new System.Drawing.Point(31, 532);
+            this.columsChart.Location = new System.Drawing.Point(871, 279);
             this.columsChart.Name = "columsChart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.columsChart.Series.Add(series1);
-            this.columsChart.Size = new System.Drawing.Size(220, 87);
+            this.columsChart.Size = new System.Drawing.Size(257, 170);
             this.columsChart.TabIndex = 3;
             this.columsChart.Text = "chart1";
+            this.columsChart.Click += new System.EventHandler(this.columsChart_Click);
             // 
             // pointChart
             // 
@@ -125,14 +126,14 @@ namespace product_prediction.UI
             this.pointChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.pointChart.Legends.Add(legend2);
-            this.pointChart.Location = new System.Drawing.Point(31, 636);
+            this.pointChart.Location = new System.Drawing.Point(37, 532);
             this.pointChart.Name = "pointChart";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.pointChart.Series.Add(series2);
-            this.pointChart.Size = new System.Drawing.Size(220, 92);
+            this.pointChart.Size = new System.Drawing.Size(227, 182);
             this.pointChart.TabIndex = 5;
             this.pointChart.Text = "chart3";
             // 
@@ -281,7 +282,7 @@ namespace product_prediction.UI
             series4.Legend = "Legend1";
             series4.Name = "Series1";
             this.lineChart.Series.Add(series4);
-            this.lineChart.Size = new System.Drawing.Size(233, 87);
+            this.lineChart.Size = new System.Drawing.Size(263, 182);
             this.lineChart.TabIndex = 18;
             this.lineChart.Text = "lineChart";
             // 
@@ -298,7 +299,7 @@ namespace product_prediction.UI
             series5.Legend = "Legend1";
             series5.Name = "Series1";
             this.barChart.Series.Add(series5);
-            this.barChart.Size = new System.Drawing.Size(298, 182);
+            this.barChart.Size = new System.Drawing.Size(257, 182);
             this.barChart.TabIndex = 19;
             this.barChart.Text = "lineChart";
             // 
