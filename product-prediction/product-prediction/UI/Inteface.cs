@@ -310,9 +310,9 @@ namespace product_prediction.UI
 			pieChart.Series[seriesname].ChartType = SeriesChartType.Pie;
 			pieChart.Series[seriesname]["PieLabelStyle"] = "Disabled";
 			pieChart.Series[seriesname].Points.AddXY("Electronic accessories", cp.count()[0, 0]);
-			pieChart.Series[seriesname].Points.AddXY("Fashion accessories", cp.count()[0,1]);
+			pieChart.Series[seriesname].Points.AddXY("Fashion accessories", cp.count()[0, 1]);
 			pieChart.Series[seriesname].Points.AddXY("Food and beverages", cp.count()[0, 2]);
-			pieChart.Series[seriesname].Points.AddXY("Health and beauty", cp.count()[0,3]);
+			pieChart.Series[seriesname].Points.AddXY("Health and beauty", cp.count()[0, 3]);
 			pieChart.Series[seriesname].Points.AddXY("Home and lifestyle", cp.count()[0, 4]);
 			pieChart.Series[seriesname].Points.AddXY("Sports and travel", cp.count()[0, 5]);
 
@@ -342,8 +342,8 @@ namespace product_prediction.UI
 
 			//Add some datapoints so the series. in this case you can pass the values to this method
 			barChart.Series[seriesname].Points.AddXY("Male", cp.count()[1, 0]);
-			barChart.Series[seriesname].Points.AddXY("Female", cp.count()[1,1]);
-			
+			barChart.Series[seriesname].Points.AddXY("Female", cp.count()[1, 1]);
+
 
 
 		}
@@ -370,7 +370,7 @@ namespace product_prediction.UI
 			//Add some datapoints so the series. in this case you can pass the values to this method
 			pointChart.Series[seriesname].Points.AddXY("Normal", cp.count()[2, 0]);
 			pointChart.Series[seriesname].Points.AddXY("Member", cp.count()[2, 1]);
-			
+
 		}
 		private void LineChartInitialize()
 		{
@@ -396,7 +396,7 @@ namespace product_prediction.UI
 			lineChart.Series[seriesname].Points.AddXY("A", cp.count()[3, 0]);
 			lineChart.Series[seriesname].Points.AddXY("B", cp.count()[3, 1]);
 			lineChart.Series[seriesname].Points.AddXY("C", cp.count()[3, 2]);
-			
+
 		}
 
 		private void ColumnChartInitialize()
@@ -425,17 +425,8 @@ namespace product_prediction.UI
 			columsChart.Series[seriesname].Points.AddXY("Credit Card", cp.count()[4, 2]);
 
 		}
-
-        private void columsChart_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
-
-
-
+	}
 
 }
 
-       
-    
+
