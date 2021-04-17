@@ -75,7 +75,30 @@ namespace product_prediction.Model
 				DateTime.Parse(sl[10]+" "+sl[11], new CultureInfo("en-US", false)), sl[12], Convert.ToDouble(sl[13], CultureInfo.InvariantCulture), 
 				Convert.ToDouble(sl[14], CultureInfo.InvariantCulture), Convert.ToDouble(sl[15], CultureInfo.InvariantCulture), Convert.ToDouble(sl[16], CultureInfo.InvariantCulture)
 				));
-        }
+		}
+
+		//Product line
+		// Gender
+		 //Customer type
+		// Branch
+		 //Payment
+		public int[,] count()
+        {
+			DataRow[] dr = dt.Select();
+			int[,] c = new int[13, 1];
+			for (int i = 0; i < dr.Length; i++)
+            {
+				string pl = dr[i]["Product line"];
+				string g= 
+				string ct=
+				string b=
+				string p=
+
+
+
+            }
+			return c;
+		}
 
 		public DataTable GetDataTable()
 		{

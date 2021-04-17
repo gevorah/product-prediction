@@ -15,20 +15,20 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace product_prediction.UI
 {
-    public partial class Interface : Form
-    {
+	public partial class Interface : Form
+	{
 
 		private Company cp;
 		private DataTable dt;
 
 		public Interface()
-        {
-            InitializeComponent();
+		{
+			InitializeComponent();
 			Init();
-        }
+		}
 
 		public void Init()
-        {
+		{
 			cp = new Company();
 			dt = cp.GetDataTable();
 			data.DataSource = dt;
@@ -41,7 +41,7 @@ namespace product_prediction.UI
 			FilterRange.Visible = false;
 			pieChartInitialize();
 
-			
+
 		}
 
 		private void Categories(string s)
@@ -88,7 +88,7 @@ namespace product_prediction.UI
 				cbFilter.Items.Add("Female");
 			}
 			else if (s.Equals("City"))
-            {
+			{
 				cbFilter.Items.Clear();
 				cbFilter.Items.Add("Yangon");
 				cbFilter.Items.Add("Mandalay");
@@ -109,8 +109,8 @@ namespace product_prediction.UI
 				Range1.Visible = false;
 				Range2.Visible = false;
 			}
-            else
-            {
+			else
+			{
 				cbFilter.Visible = false;
 				labelFilter.Visible = false;
 				labelRange.Visible = true;
@@ -164,7 +164,7 @@ namespace product_prediction.UI
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Payment", cbFilter.Text); ;
 			}
-			
+
 			else if (s.Equals("Fashion accessories"))
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "Product line", cbFilter.Text); ;
@@ -200,14 +200,14 @@ namespace product_prediction.UI
 			else if (s.Equals("Naypyitaw"))
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "City", cbFilter.Text); ;
-				
+
 			}
 
-			
+
 		}
 
-        private void NoFilter_Click(object sender, EventArgs e)
-        {
+		private void NoFilter_Click(object sender, EventArgs e)
+		{
 			dt.DefaultView.RowFilter = string.Empty;
 			dt = cp.GetDataTable();
 			data.DataSource = dt;
@@ -223,8 +223,8 @@ namespace product_prediction.UI
 			Range2.Clear();
 		}
 
-        private void FilterRange_Click(object sender, EventArgs e)
-        {
+		private void FilterRange_Click(object sender, EventArgs e)
+		{
 			string category = cbCategory.Text;
 			if (category.Equals("Unit price"))
 			{
@@ -236,7 +236,8 @@ namespace product_prediction.UI
 				if (r1 == 0)
 				{
 					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", 1, int.Parse(Range2.Text)); ;
-				} else
+				}
+				else
 				{
 					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", int.Parse(Range1.Text), int.Parse(Range2.Text)); ;
 				}
@@ -263,59 +264,169 @@ namespace product_prediction.UI
 			else if (category.Equals("Rating"))
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Rating", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
-			} else if (category.Equals("DateTime"))
+			}
+			else if (category.Equals("DateTime"))
 			{
-				String d1 = "#"+ Range1.Text + "#";
+				String d1 = "#" + Range1.Text + "#";
 				String d2 = "#" + Range2.Text + "#";
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.DateTime') >= '{1}' AND Convert([{0}], 'System.DateTime') <= '{2}'", "DateTime", DateTime.Parse(d1), DateTime.Parse(d2)); ;
 			}
-			
+
 		}
 
 
 		private void Graphics()
 		{
-			pieChartInitialize();
-			BarChartInitialize();
-			PointsChartInitialize();
-			PointsChartInitialize();
+			pieChartInitialize();//Product line
+			BarChartInitialize();// Gender
+			PointsChartInitialize(); //Customer type
+			LineChartInitialize();// Branch
+			ColumnChartInitialize(); //Payment
+
 		}
 
-		private void pieChartInitialize() {
+		private void pieChartInitialize()
+		{
 
-			
+
 			pieChart.Series.Clear();
 			pieChart.Legends.Clear();
 
 			//Add a new Legend(if needed) and do some formating
-			pieChart.Legends.Add("Customer type");
+			pieChart.Legends.Add("Product line");
 			pieChart.Legends[0].Alignment = StringAlignment.Center;
-			pieChart.Legends[0].Title = "Customer type";
+			pieChart.Legends[0].Title = "Product Line";
 			pieChart.Legends[0].BorderColor = Color.Black;
 
 			//Add a new chart-series
-			string seriesname = "Customer type";
+			string seriesname = "Product line";
 			pieChart.Series.Add(seriesname);
 			//set the chart-type to "Pie"
 			pieChart.Series[seriesname].ChartType = SeriesChartType.Pie;
 			pieChart.Series[seriesname]["PieLabelStyle"] = "Disabled";
 
 			//Add some datapoints so the series. in this case you can pass the values to this method
-			pieChart.Series[seriesname].Points.AddXY(municipios[0, 0], municipios[0, 1]);
+			/*pieChart.Series[seriesname].Points.AddXY(municipios[0, 0], municipios[0, 1]);
 			pieChart.Series[seriesname].Points.AddXY(municipios[1, 0], municipios[1, 1]);
 			pieChart.Series[seriesname].Points.AddXY(municipios[2, 0], municipios[2, 1]);
-		
-		}
-
-
-                
+			pieChart.Series[seriesname].Points.AddXY(municipios[0, 0], municipios[0, 1]);
+			pieChart.Series[seriesname].Points.AddXY(municipios[1, 0], municipios[1, 1]);
+			pieChart.Series[seriesname].Points.AddXY(municipios[2, 0], municipios[2, 1]);*/
 
 		}
 
+		private void BarChartInitialize()
+		{
+			barChart.Series.Clear();
+			barChart.Legends.Clear();
+
+			//Add a new Legend(if needed) and do some formating
+			barChart.Legends.Add("Gender");
+			barChart.Legends[0].LegendStyle = LegendStyle.Table;
+			barChart.Legends[0].Docking = Docking.Bottom;
+			barChart.Legends[0].Alignment = StringAlignment.Center;
+			barChart.Legends[0].Title = "Gender";
+			barChart.Legends[0].BorderColor = Color.Black;
+
+			//Add a new chart-series
+			string seriesname = "Gender";
+			barChart.Series.Add(seriesname);
+			//set the chart-type to "bar"
+			barChart.Series[seriesname].ChartType = SeriesChartType.Bar;
+			barChart.Series[seriesname]["BarLabelStyle"] = "Disabled";
+
+			//Add some datapoints so the series. in this case you can pass the values to this method
+			/*barChart.Series[seriesname].Points.AddXY("2000", dm.count()[2, 0]);
+			barChart.Series[seriesname].Points.AddXY("2001", dm.count()[3, 0]);
+			*/
 
 
-		
-    }
+		}
+		public void PointsChartInitialize()
+		{
+			pointChart.Series.Clear();
+			pointChart.Legends.Clear();
+
+			//Add a new Legend(if needed) and do some formating
+			pointChart.Legends.Add("Customer type");
+			pointChart.Legends[0].LegendStyle = LegendStyle.Table;
+			pointChart.Legends[0].Docking = Docking.Bottom;
+			pointChart.Legends[0].Alignment = StringAlignment.Center;
+			pointChart.Legends[0].Title = "Customer Type";
+			pointChart.Legends[0].BorderColor = Color.Black;
+
+			//Add a new chart-series
+			string seriesname = "Customer Type";
+			pointChart.Series.Add(seriesname);
+			//set the chart-type to "Point"
+			pointChart.Series[seriesname].ChartType = SeriesChartType.Point;
+			pointChart.Series[seriesname]["PointLabelStyle"] = "Disabled";
+
+			//Add some datapoints so the series. in this case you can pass the values to this method
+			/*pointChart.Series[seriesname].Points.AddXY("2000", dm.count()[2, 0]);
+			pointChart.Series[seriesname].Points.AddXY("2001", dm.count()[3, 0]);
+			*/
+		}
+		private void LineChartInitialize()
+		{
+			lineChart.Series.Clear();
+			lineChart.Legends.Clear();
+
+			//Add a new Legend(if needed) and do some formating
+			lineChart.Legends.Add("Branch");
+			lineChart.Legends[0].LegendStyle = LegendStyle.Table;
+			lineChart.Legends[0].Docking = Docking.Bottom;
+			lineChart.Legends[0].Alignment = StringAlignment.Center;
+			lineChart.Legends[0].Title = "Branch";
+			lineChart.Legends[0].BorderColor = Color.Black;
+
+			//Add a new chart-series
+			string seriesname = "Branch";
+			lineChart.Series.Add(seriesname);
+			//set the chart-type to "Point"
+			lineChart.Series[seriesname].ChartType = SeriesChartType.Line;
+			lineChart.Series[seriesname]["LineLabelStyle"] = "Disabled";
+
+			//Add some datapoints so the series. in this case you can pass the values to this method
+			/*pointChart.Series[seriesname].Points.AddXY("2000", dm.count()[2, 0]);
+			pointChart.Series[seriesname].Points.AddXY("2001", dm.count()[3, 0]);
+			pointChart.Series[seriesname].Points.AddXY("2002", dm.count()[4, 0]);
+			*/
+		}
+
+		private void ColumnChartInitialize()
+		{
+			columsChart.Series.Clear();
+			columsChart.Legends.Clear();
+
+			//Add a new Legend(if needed) and do some formating
+			columsChart.Legends.Add("Payment");
+			columsChart.Legends[0].LegendStyle = LegendStyle.Table;
+			columsChart.Legends[0].Docking = Docking.Bottom;
+			columsChart.Legends[0].Alignment = StringAlignment.Center;
+			columsChart.Legends[0].Title = "Payment";
+			columsChart.Legends[0].BorderColor = Color.Black;
+
+			//Add a new chart-series
+			string seriesname = "Payment";
+			columsChart.Series.Add(seriesname);
+			//set the chart-type to "Point"
+			columsChart.Series[seriesname].ChartType = SeriesChartType.Column;
+			columsChart.Series[seriesname]["ColumnLabelStyle"] = "Disabled";
+
+			//Add some datapoints so the series. in this case you can pass the values to this method
+			/*pointChart.Series[seriesname].Points.AddXY("2000", dm.count()[2, 0]);
+			pointChart.Series[seriesname].Points.AddXY("2001", dm.count()[3, 0]);
+			*/
+		}
+
+
+	}
+
+
+
+
+}
 
        
-    }
+    

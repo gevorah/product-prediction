@@ -346,7 +346,7 @@ namespace product_prediction.UI
         private System.Windows.Forms.DataGridView data;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataVisualization.Charting.Chart columsChart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart pointChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart lineChart;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label label3;
@@ -358,8 +358,8 @@ namespace product_prediction.UI
         private System.Windows.Forms.Button NoFilter;
         private System.Windows.Forms.Button FilterRange;
         private System.Windows.Forms.DataVisualization.Charting.Chart pieChart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart lineChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart barChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart pointChart;
     }
 }
 
