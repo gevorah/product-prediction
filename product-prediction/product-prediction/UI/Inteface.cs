@@ -43,6 +43,7 @@ namespace product_prediction.UI
 			BarChartInitialize();
 			PointsChartInitialize();
 			LineChartInitialize();
+			ColumnChartInitialize();
 
 
 
@@ -419,9 +420,10 @@ namespace product_prediction.UI
 			columsChart.Series[seriesname]["ColumnLabelStyle"] = "Disabled";
 
 			//Add some datapoints so the series. in this case you can pass the values to this method
-			/*pointChart.Series[seriesname].Points.AddXY("2000", dm.count()[2, 0]);
-			pointChart.Series[seriesname].Points.AddXY("2001", dm.count()[3, 0]);
-			*/
+			columsChart.Series[seriesname].Points.AddXY("Cash", cp.count()[4, 0]);
+			columsChart.Series[seriesname].Points.AddXY("EWallet", cp.count()[4, 1]);
+			columsChart.Series[seriesname].Points.AddXY("Credit Card", cp.count()[4, 2]);
+
 		}
 
         private void columsChart_Click(object sender, EventArgs e)
