@@ -40,6 +40,8 @@ namespace product_prediction.UI
 			Range2.Visible = false;
 			FilterRange.Visible = false;
 			pieChartInitialize();
+			BarChartInitialize();
+
 
 
 		}
@@ -304,7 +306,7 @@ namespace product_prediction.UI
 			//set the chart-type to "Pie"
 			pieChart.Series[seriesname].ChartType = SeriesChartType.Pie;
 			pieChart.Series[seriesname]["PieLabelStyle"] = "Disabled";
-			pieChart.Series[seriesname].Points.AddXY("Electronic accessorie", cp.count()[0, 0]);
+			pieChart.Series[seriesname].Points.AddXY("Electronic accessories", cp.count()[0, 0]);
 			pieChart.Series[seriesname].Points.AddXY("Fashion accessories", cp.count()[0,1]);
 			pieChart.Series[seriesname].Points.AddXY("Food and beverages", cp.count()[0, 2]);
 			pieChart.Series[seriesname].Points.AddXY("Health and beauty", cp.count()[0,3]);
@@ -336,9 +338,9 @@ namespace product_prediction.UI
 			barChart.Series[seriesname]["BarLabelStyle"] = "Disabled";
 
 			//Add some datapoints so the series. in this case you can pass the values to this method
-			/*barChart.Series[seriesname].Points.AddXY("2000", dm.count()[2, 0]);
-			barChart.Series[seriesname].Points.AddXY("2001", dm.count()[3, 0]);
-			*/
+			barChart.Series[seriesname].Points.AddXY("Male", cp.count()[1, 0]);
+			barChart.Series[seriesname].Points.AddXY("Female", cp.count()[1,1]);
+			
 
 
 		}

@@ -257,7 +257,7 @@ namespace product_prediction.UI
             this.pieChart.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.pieChart.Legends.Add(legend3);
-            this.pieChart.Location = new System.Drawing.Point(673, 532);
+            this.pieChart.Location = new System.Drawing.Point(610, 532);
             this.pieChart.Name = "pieChart";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -291,14 +291,14 @@ namespace product_prediction.UI
             this.barChart.ChartAreas.Add(chartArea5);
             legend5.Name = "Legend1";
             this.barChart.Legends.Add(legend5);
-            this.barChart.Location = new System.Drawing.Point(306, 641);
+            this.barChart.Location = new System.Drawing.Point(871, 532);
             this.barChart.Name = "barChart";
             series5.ChartArea = "ChartArea1";
             series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series5.Legend = "Legend1";
             series5.Name = "Series1";
             this.barChart.Series.Add(series5);
-            this.barChart.Size = new System.Drawing.Size(233, 87);
+            this.barChart.Size = new System.Drawing.Size(298, 182);
             this.barChart.TabIndex = 19;
             this.barChart.Text = "lineChart";
             // 
@@ -307,7 +307,7 @@ namespace product_prediction.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(939, 749);
+            this.ClientSize = new System.Drawing.Size(1301, 749);
             this.Controls.Add(this.barChart);
             this.Controls.Add(this.lineChart);
             this.Controls.Add(this.pieChart);
