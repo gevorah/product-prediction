@@ -11,6 +11,7 @@ using product_prediction.Model;
 using System.IO;
 using System.Globalization;
 using System.Collections;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace product_prediction.UI
 {
@@ -38,6 +39,8 @@ namespace product_prediction.UI
 			Range1.Visible = false;
 			Range2.Visible = false;
 			FilterRange.Visible = false;
+			pieChartInitialize();
+
 			
 		}
 
@@ -197,6 +200,7 @@ namespace product_prediction.UI
 			else if (s.Equals("Naypyitaw"))
 			{
 				dt.DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') IN ('{1}')", "City", cbFilter.Text); ;
+				
 			}
 
 			
@@ -267,6 +271,48 @@ namespace product_prediction.UI
 			}
 			
 		}
+
+
+		private void Graphics()
+		{
+			pieChartInitialize();
+			BarChartInitialize();
+			PointsChartInitialize();
+			PointsChartInitialize();
+		}
+
+		private void pieChartInitialize() {
+
+			
+			pieChart.Series.Clear();
+			pieChart.Legends.Clear();
+
+			//Add a new Legend(if needed) and do some formating
+			pieChart.Legends.Add("Customer type");
+			pieChart.Legends[0].Alignment = StringAlignment.Center;
+			pieChart.Legends[0].Title = "Customer type";
+			pieChart.Legends[0].BorderColor = Color.Black;
+
+			//Add a new chart-series
+			string seriesname = "Customer type";
+			pieChart.Series.Add(seriesname);
+			//set the chart-type to "Pie"
+			pieChart.Series[seriesname].ChartType = SeriesChartType.Pie;
+			pieChart.Series[seriesname]["PieLabelStyle"] = "Disabled";
+
+			//Add some datapoints so the series. in this case you can pass the values to this method
+			pieChart.Series[seriesname].Points.AddXY(municipios[0, 0], municipios[0, 1]);
+			pieChart.Series[seriesname].Points.AddXY(municipios[1, 0], municipios[1, 1]);
+			pieChart.Series[seriesname].Points.AddXY(municipios[2, 0], municipios[2, 1]);
+		
+		}
+
+
+                
+
+		}
+
+
 
 		
     }
