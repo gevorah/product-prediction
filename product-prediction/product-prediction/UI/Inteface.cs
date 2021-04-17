@@ -42,6 +42,7 @@ namespace product_prediction.UI
 			pieChartInitialize();
 			BarChartInitialize();
 			PointsChartInitialize();
+			LineChartInitialize();
 
 
 
@@ -391,10 +392,10 @@ namespace product_prediction.UI
 			lineChart.Series[seriesname]["LineLabelStyle"] = "Disabled";
 
 			//Add some datapoints so the series. in this case you can pass the values to this method
-			/*pointChart.Series[seriesname].Points.AddXY("2000", dm.count()[2, 0]);
-			pointChart.Series[seriesname].Points.AddXY("2001", dm.count()[3, 0]);
-			pointChart.Series[seriesname].Points.AddXY("2002", dm.count()[4, 0]);
-			*/
+			lineChart.Series[seriesname].Points.AddXY("A", cp.count()[3, 0]);
+			lineChart.Series[seriesname].Points.AddXY("B", cp.count()[3, 1]);
+			lineChart.Series[seriesname].Points.AddXY("C", cp.count()[3, 2]);
+			
 		}
 
 		private void ColumnChartInitialize()
