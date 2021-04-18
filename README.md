@@ -9,5 +9,7 @@ This software shows us reports with filters for string,quantitative and qualitat
 
 <img src="/product-prediction/product-prediction/Docs/photoProductPrediction1.PNG" />
 <img src="/product-prediction/product-prediction/Docs/photoProductPrediction2.PNG" />
+<img src="/product-prediction/product-prediction/Docs/photoProductPrediction3.PNG" />
+<img src="/product-prediction/product-prediction/Docs/photoProductPrediction4.PNG" />
 
 <br> link of the software working (1st Stage) and our explaination: https://youtu.be/HJ2ycQv8rhg
