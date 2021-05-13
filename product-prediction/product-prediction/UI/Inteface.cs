@@ -223,52 +223,62 @@ namespace product_prediction.UI
 
 		private void FilterRange_Click(object sender, EventArgs e)
 		{
-			string category = cbCategory.Text;
-			if (category.Equals("Unit price"))
-			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Unit price", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
-			}
-			else if (category.Equals("Quantity"))
-			{
-				int r1 = int.Parse(Range1.Text);
-				if (r1 == 0)
+
+            try { 
+
+				string category = cbCategory.Text;
+				if (category.Equals("Unit price"))
 				{
-					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", 1, int.Parse(Range2.Text)); ;
+					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Unit price", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
 				}
-				else
+				else if (category.Equals("Quantity"))
 				{
-					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", int.Parse(Range1.Text), int.Parse(Range2.Text)); ;
+					int r1 = int.Parse(Range1.Text);
+					if (r1 == 0)
+					{
+						dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", 1, int.Parse(Range2.Text)); ;
+					}
+					else
+					{
+						dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.String') >= '{1}' AND Convert([{0}], 'System.String') <= '{2}'", "Quantity", int.Parse(Range1.Text), int.Parse(Range2.Text)); ;
+					}
 				}
-			}
-			else if (category.Equals("Tax"))
-			{
+				else if (category.Equals("Tax"))
+				{
 
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Tax 5%", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Tax 5%", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
 
 
-			}
-			else if (category.Equals("Total"))
-			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Total", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
-			}
-			else if (category.Equals("COGS"))
-			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "cogs", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
-			}
-			else if (category.Equals("Gross income"))
-			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "gross income", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
-			}
-			else if (category.Equals("Rating"))
-			{
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Rating", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
-			}
-			else if (category.Equals("DateTime"))
-			{
-				String d1 = "#" + Range1.Text + "#";
-				String d2 = "#" + Range2.Text + "#";
-				dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.DateTime') >= '{1}' AND Convert([{0}], 'System.DateTime') <= '{2}'", "DateTime", DateTime.Parse(d1), DateTime.Parse(d2)); ;
-			}
+				}
+				else if (category.Equals("Total"))
+				{
+					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Total", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+				}
+				else if (category.Equals("COGS"))
+				{
+					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "cogs", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+				}
+				else if (category.Equals("Gross income"))
+				{
+					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "gross income", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+				}
+				else if (category.Equals("Rating"))
+				{
+					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.Double') >= '{1}' AND Convert([{0}], 'System.Double') <= '{2}'", "Rating", double.Parse(Range1.Text, CultureInfo.InvariantCulture), double.Parse(Range2.Text, CultureInfo.InvariantCulture)); ;
+				}
+				else if (category.Equals("DateTime"))
+				{
+					String d1 = "#" + Range1.Text + "#";
+					String d2 = "#" + Range2.Text + "#";
+					dt.DefaultView.RowFilter = string.Format("Convert([{0}],'System.DateTime') >= '{1}' AND Convert([{0}], 'System.DateTime') <= '{2}'", "DateTime", DateTime.Parse(d1), DateTime.Parse(d2)); ;
+				}
+            }catch(Exception exp)
+            {
+				String msj = "Error";
+				String rec = "Please enter numeric values in the filter range";
+				MessageBox.Show(rec,msj);
+            }
+           
 
 		}
 
