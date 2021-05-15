@@ -47,6 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecisionTree\BranchNodeCollection.cs" />
+    <Compile Include="DecisionTree\Variable.cs" />
+    <Compile Include="DecisionTree\Tree.cs" />
+    <Compile Include="DecisionTree\Node.cs" />
     <Compile Include="Model\Sale.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="UI\Inteface.cs">
