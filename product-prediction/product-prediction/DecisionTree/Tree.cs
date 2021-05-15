@@ -8,6 +8,19 @@ namespace product_prediction.DecisionTree
 {
     class Tree<T>
     {
+        public int numOfNodes { get; }
+        public int numOfClasses { get; }
+        public List<Node<T>> tree;
+
+        public Tree(int numOfNodes, int numOfClasses)
+        {
+
+        }
+
+        public void BuildTree(T[][] dataX,T[] dataY)
+        { 
+        
+        }
 
     }
 }
