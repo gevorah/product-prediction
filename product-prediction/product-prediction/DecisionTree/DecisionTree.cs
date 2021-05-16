@@ -8,54 +8,69 @@ namespace product_prediction.DecisionTree
 {
     class DecisionTree
     {
-
         double nodeGainRatio;
         double nodeInformationGain;
         bool isLeaf;
         string majorityClass;
         string bestAttribute;
-        List<DecisionTree>  children;
+        int bestAttributeId;
+        Dictionary<string, DecisionTree> children = new Dictionary<string, DecisionTree>();
         DecisionTree parent;
 
 
-        public DecisionTree(string[,]attributes, List<string> labels) {
+        public DecisionTree(string[,] attributes, List<string> labels)
+        {
             parent = null;
-            buildTree(attributes, labels);
+            BuildTree(attributes, labels);
         }
 
-        private List<int> segregate(List<string> attributearray, string value) {
-            List<int> outlist = new List<int>();
+        private List<int> IdentificarOcurrencias(List<string> matrizValores, string valorBuscar)
+        {
+            List<int> listaIdsOcurrencias = new List<int>();
 
-            for (int i = 1; i < attributearray.Count; i++) {
-                if (attributearray[i] == value) {
-                    outlist.Add(i);
+            for (int i = 1; i < matrizValores.Count; i++)
+            {
+                if (matrizValores[i] == valorBuscar)
+                {
+                    listaIdsOcurrencias.Add(i);
                 }
             }
 
-            return outlist;
+            return listaIdsOcurrencias;
         }
 
-        private double computeEntropy(List<string> labels) {
-            double entropy = 0;
-            for (int i = 1; i < labels.Count; i++) {
-                double probability_i = segregate(labels, labels[i]).Count / labels.Count;
-                entropy -= probability_i * Math.Log(probability_i);
+        private double CalcularEntropia(List<string> etiquetas)
+        {
+            double entropia = 0;
+            List<string> valoresColumna = ObtenerValoresUnicosLista(etiquetas);
+            int cantidadOcurrencias = 0;
+            double probabilidad_i = 0;
+
+            for (int i = 0; i < valoresColumna.Count; i++)
+            {
+                cantidadOcurrencias = IdentificarOcurrencias(etiquetas, valoresColumna[i]).Count;
+                probabilidad_i = (double)cantidadOcurrencias / (double)(etiquetas.Count - 1);
+                entropia -= probabilidad_i * Math.Log(probabilidad_i);
             }
 
-            return entropy;
+            return entropia;
         }
 
-        private string mostFrequentlyOccurringValue( List<string>labels) {
-            int bestCount = -1;
-            string bestId = "";
-            for (int i = 1; i < labels.Count; i++) {
-                int count_i = segregate(labels, labels[i]).Count;
-                if (count_i > bestCount) {
-                    bestCount = count_i;
-                    bestId = labels[i];
+
+        private string ObtenerValorMasFrecuente(List<string> etiquetas)
+        {
+            int mejorConteo = -1;
+            string mejorEtiqueta = "";
+            for (int i = 1; i < etiquetas.Count; i++)
+            {
+                int cantidadOcurrencias_i = IdentificarOcurrencias(etiquetas, etiquetas[i]).Count;
+                if (cantidadOcurrencias_i > mejorConteo)
+                {
+                    mejorConteo = cantidadOcurrencias_i;
+                    mejorEtiqueta = etiquetas[i];
                 }
             }
-            return bestId;
+            return mejorEtiqueta;
         }
 
 
@@ -65,14 +80,14 @@ namespace product_prediction.DecisionTree
             bool existe;
             string valor;
 
-            for (int fila = 1; fila < (matrix.GetUpperBound(0)+1); fila++)
+            for (int fila = 1; fila < (matrix.GetUpperBound(0) + 1); fila++)
             {
                 valor = matrix[fila, columna];
                 existe = false;
 
-                for(int i = 0; i < valoresUnicos.Count; i++)
+                for (int i = 0; i < valoresUnicos.Count; i++)
                 {
-                    if(valor == valoresUnicos[i])
+                    if (valor == valoresUnicos[i])
                     {
                         existe = true;
                         break;
@@ -88,13 +103,27 @@ namespace product_prediction.DecisionTree
             return valoresUnicos.ToArray();
         }
 
+        private List<String> ObtenerValoresUnicosLista(List<string> listaValores)
+        {
+            List<string> valoresUnicos = new List<string>();
+            string valor;
+
+            for (int i = 1; i < listaValores.Count; i++)
+            {
+                valor = listaValores[i];
+
+                if (!valoresUnicos.Contains(valor)) valoresUnicos.Add(valor);
+            }
+
+            return valoresUnicos;
+        }
 
         private List<string> ObtenerValoresColumna(string[,] matrix, int columna)
         {
             List<string> valores = new List<string>();
             string valor;
 
-            for (int fila = 1; fila < (matrix.GetUpperBound(0) + 1); fila++)
+            for (int fila = 0; fila < (matrix.GetUpperBound(0) + 1); fila++)
             {
                 valor = matrix[fila, columna];
                 valores.Add(valor);
@@ -103,12 +132,14 @@ namespace product_prediction.DecisionTree
             return valores;
         }
 
-        private List<string> obtenerListaValores(List<string> listaValores, List<int> listaIndices)
+        private List<string> ObtenerListaValoresFiltrada(List<string> listaValores, List<int> listaIndices)
         {
             List<string> listaFiltrada = new List<string>();
             int indice;
 
-            for(int i = 0; i < listaIndices.Count; i++)
+            listaFiltrada.Add(listaValores[0]);
+
+            for (int i = 0; i < listaIndices.Count; i++)
             {
                 indice = listaIndices[i];
                 listaFiltrada.Add(listaValores[indice]);
@@ -118,21 +149,24 @@ namespace product_prediction.DecisionTree
         }
 
 
-        private string[,] ObtenerListaValores(string[,] matriz, List<int> listaIndices)
+        private string[,] ObtenerMatrizValoresFiltrada(string[,] matriz, List<int> listaIndices)
         {
-            int cantidadFilas = listaIndices.Count;
+            int cantidadFilas = listaIndices.Count + 1;
             int cantidadColumnas = matriz.GetUpperBound(1) + 1;
 
             string[,] matrizFiltrada = new string[cantidadFilas, cantidadColumnas];
-            
-            for (int i = 0; i < matriz.GetUpperBound(0) + 1; i++)
+            int idfilaMatrizFiltrada = 0;
+
+            for (int idFila = 0; idFila < matriz.GetUpperBound(0) + 1; idFila++)
             {
-                if (listaIndices.Contains(i))
+                // La fila cero es los encabezados y si deben estar
+                if (idFila == 0 || listaIndices.Contains(idFila))
                 {
-                    for(int j=0; j < matriz.GetUpperBound(1) + 1; j++)
+                    for (int idColumna = 0; idColumna < matriz.GetUpperBound(1) + 1; idColumna++)
                     {
-                        matrizFiltrada[i, j] = matriz[i, j];
+                        matrizFiltrada[idfilaMatrizFiltrada, idColumna] = matriz[idFila, idColumna];
                     }
+                    idfilaMatrizFiltrada++;
                 }
             }
 
@@ -146,9 +180,9 @@ namespace product_prediction.DecisionTree
             int fila, columna;
             // Recorre las filas
             for (int i = 0; i < matriz.GetUpperBound(0) + 1; i++)
-            { 
+            {
                 // Recorre las Columnas
-                for(int j = 0; j < matriz.GetUpperBound(1) + 1; j++)
+                for (int j = 0; j < matriz.GetUpperBound(1) + 1; j++)
                 {
                     fila = i;
                     columna = j;
@@ -162,13 +196,15 @@ namespace product_prediction.DecisionTree
             return matrizDepurada;
         }
 
-        private void buildTree(string[,] attributes, List<string> labels) {
+        private void BuildTree(string[,] attributes, List<string> labels)
+        {
 
             int numInstances = labels.Count;
-            double nodeInformation = numInstances * computeEntropy(labels);
-            this.majorityClass = mostFrequentlyOccurringValue(labels);
+            double nodeInformation = numInstances * CalcularEntropia(labels);
+            this.majorityClass = ObtenerValorMasFrecuente(labels);
 
-            if (nodeInformation == 0) {
+            if (nodeInformation == 0)
+            {
                 isLeaf = true;
                 return;
             }
@@ -178,52 +214,117 @@ namespace product_prediction.DecisionTree
             double bestInformationGain = -1;
             double bestGainRatio = -1;
 
-            for(int X=0; X < attributes.Length; X++) {
+            for (int X = 0; X < attributes.GetUpperBound(1) + 1; X++)
+            {
                 double conditionalInfo = 0;
                 double attributeEntropy = 0;
 
                 string[] valoresColumna = ObtenerValoresUnicos(attributes, X);
                 double[] attributeCount = new double[valoresColumna.Length];
 
-                for (int Y = 0; Y< valoresColumna.Length; Y++) 
+                for (int Y = 0; Y < valoresColumna.Length; Y++)
                 {
-                    List<int> ids = segregate(ObtenerValoresColumna(attributes, X), valoresColumna[Y]); // get ids of all instances for which attribute X == Y
+                    List<int> ids = IdentificarOcurrencias(ObtenerValoresColumna(attributes, X), valoresColumna[Y]); // get ids of all instances for which attribute X == Y
 
                     attributeCount[Y] = ids.Count;
-                    conditionalInfo += attributeCount[Y] * computeEntropy(obtenerListaValores(labels,ids));
+                    double entropiaCalculada = CalcularEntropia(ObtenerListaValoresFiltrada(labels, ids));
+                    conditionalInfo += attributeCount[Y] * entropiaCalculada;
                 }
 
                 double attributeInformationGain = nodeInformation - conditionalInfo;
-                double gainRatio = attributeInformationGain / computeEntropy(attributeCount);
-                
-                if (gainRatio > bestGainRatio) {
+                double gainRatio = attributeInformationGain / CalcularEntropia(ObtenerValoresColumna(attributes, X));
+
+                if (gainRatio > bestGainRatio)
+                {
                     bestInformationGain = attributeInformationGain;
                     bestGainRatio = gainRatio;
-                    bestAttribute = attributes[0,X];
+                    bestAttribute = attributes[0, X];
                     bestAttributeId = X;
                 }
             }
 
             // If no attribute provides andy gain, this node cannot be split further
-            if (bestGainRatio == 0) {
+            if (bestGainRatio == 0)
+            {
                 @isLeaf = true;
                 return;
             }
 
             // Otherwise split by the best attribute
+            this.bestAttributeId = bestAttributeId;
             this.bestAttribute = bestAttribute;
             this.nodeGainRatio = bestGainRatio;
             this.nodeInformationGain = bestInformationGain;
 
             string[] valoresMejorColumna = ObtenerValoresUnicos(attributes, bestAttributeId);
 
-            for (int Y = 0; Y < valoresMejorColumna.Length; Y++) {
-                List<int> ids = segregate(ObtenerValoresColumna(attributes, bestAttributeId), valoresMejorColumna[Y]);
-                this.children[Y] = new DecisionTree(ObtenerListaValores(attributes, ids), obtenerListaValores(labels, ids));
-                this.children[Y].parent = this;
+            for (int Y = 0; Y < valoresMejorColumna.Length; Y++)
+            {
+                List<string> valores = ObtenerValoresColumna(attributes, bestAttributeId);
+                string valorEvaluar = valoresMejorColumna[Y];
+                List<int> ids = IdentificarOcurrencias(valores, valorEvaluar);
+
+                //this.children.Add(valoresMejorColumna[Y], new DecisionTree(ObtenerMatrizValoresFiltrada(attributes, ids), ObtenerListaValoresFiltrada(labels, ids)));
+                //this.children[valoresMejorColumna[Y]].parent = this;
+
+                // NUEVO
+                string[,] atributosNuevoArbol = EliminarColumna(attributes, bestAttributeId);
+                atributosNuevoArbol = ObtenerMatrizValoresFiltrada(atributosNuevoArbol, ids);
+
+                //List<string> nuevasEtiquetas = ObtenerListaValoresFiltrada(valores, ids);
+                List<string> nuevasEtiquetas = ObtenerListaValoresFiltrada(labels, ids);
+                this.children.Add(valoresMejorColumna[Y], new DecisionTree(atributosNuevoArbol, nuevasEtiquetas));
+                this.children[valoresMejorColumna[Y]].parent = this;
             }
 
             return;
         }
+
+        public String Evaluar(string[,] matrizEvaluar, int i = 0)
+        {
+            if (this.isLeaf)
+                return this.majorityClass;
+            else
+            {
+                string valorEvaluar = "";
+                for (int columna = 0; columna < matrizEvaluar.GetUpperBound(1) + 1; columna++)
+                {
+                    if (this.bestAttribute == matrizEvaluar[0, columna])
+                    {
+                        valorEvaluar = matrizEvaluar[1, columna];
+                        break;
+                    }
+                }
+
+                return this.children[valorEvaluar].Evaluar(matrizEvaluar, i += 1);
+            }
+        }
+
+        public void PintarArbol(string identacion, bool ultimo, string valor)
+        {
+            Console.Write(identacion);
+            if (this.isLeaf)
+            {
+                Console.WriteLine("\\--" + valor + "->" + this.majorityClass);
+                identacion += "  ";
+            }
+            else
+            {
+                string cadenaPrevia = "|--" + valor + "->";
+                Console.WriteLine(cadenaPrevia + this.bestAttribute);
+                identacion += "|".PadRight(cadenaPrevia.Length, ' ');
+            }
+
+            int cantidadElementosDiccionario = this.children.Count;
+            int indice = 1;
+
+            foreach (KeyValuePair<string, DecisionTree> subArbol in this.children)
+            {
+                subArbol.Value.PintarArbol(identacion, indice == cantidadElementosDiccionario, subArbol.Key);
+                indice++;
+            }
+
+        }
+
     }
 }
