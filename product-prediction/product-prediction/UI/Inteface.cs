@@ -40,6 +40,8 @@ namespace product_prediction.UI
 			Range2.Visible = false;
 			FilterRange.Visible = false;
 			Graphics();
+			cp.Training();
+			//cp.Analysis();
 		}
 
 		private void Categories(string s)

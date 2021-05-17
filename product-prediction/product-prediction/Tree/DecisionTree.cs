@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace product_prediction.DecisionTree
+namespace product_prediction.Tree
 {
+
+    //new code
     class DecisionTree
     {
         double nodeGainRatio;
@@ -73,6 +75,7 @@ namespace product_prediction.DecisionTree
             return mejorEtiqueta;
         }
 
+        static int n = 0;
 
         private string[] ObtenerValoresUnicos(string[,] matrix, int columna)
         {
@@ -203,7 +206,7 @@ namespace product_prediction.DecisionTree
             double nodeInformation = numInstances * CalcularEntropia(labels);
             this.majorityClass = ObtenerValorMasFrecuente(labels);
 
-            if (nodeInformation == 0)
+            if (nodeInformation == 0 || attributes.GetUpperBound(0) == -1 || attributes.GetUpperBound(1) == -1)
             {
                 isLeaf = true;
                 return;

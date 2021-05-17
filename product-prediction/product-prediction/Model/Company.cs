@@ -6,28 +6,31 @@ using System.Threading.Tasks;
 using System.Data;
 using System.IO;
 using System.Globalization;
-
+using product_prediction.Tree;
 namespace product_prediction.Model
 {
     class Company
     {
         private List<Sale> sales;
-		private const string file = @"data\information.csv";
+		private const string File = @"data\information.csv";
+		private DecisionTree tree;
+		private DataTable dt;
 
-        public Company()
+		public Company()
         {
 			sales = new List<Sale>();
+			dt = new DataTable();
 			Read();
 		}
 
-		private DataTable dt = new DataTable();
+		
 		private void Read()
 		{
 				try
 			{
 				string cd = Directory.GetCurrentDirectory();
 				string extra = @"bin\Debug";
-				string path = cd.Substring(0,cd.Length-extra.Length) + file;
+				string path = cd.Substring(0,cd.Length-extra.Length) + File; 
 				Console.WriteLine(path);
 				StreamReader sr = new StreamReader(path);
 				string line;
@@ -170,6 +173,40 @@ namespace product_prediction.Model
 		public DataTable GetDataTable()
 		{
 			return dt;
+		}
+
+		public void Training() 
+		{
+			//Predictions Matrix: Branch	Customer type	Gender	 Payment
+			//Labels List: Product line
+			string[,] predictions = new string[800,4];
+			List<string> labels = new List<string>();
+			DataRow[] dr = dt.Select();
+			predictions[0, 0] = "Branch";
+			predictions[0, 1] = "Customer type";
+			predictions[0, 2] = "Gender";
+			predictions[0, 3] = "Payment";
+			labels.Add("Product line");
+			for (int i=1;i<800;i++)
+            {
+				Console.WriteLine();
+				predictions[i, 0] = dr[i-1]["Branch"].ToString();
+				predictions[i, 1] = dr[i-1]["Customer type"].ToString();
+				predictions[i, 2] = dr[i-1]["Gender"].ToString();
+				predictions[i, 3] = dr[i-1]["Payment"].ToString();
+				labels.Add(dr[i]["Product line"].ToString());
+			}
+
+			tree = new DecisionTree(predictions, labels);
+			tree.PintarArbol("", true, "");
+
+		}
+
+		public void Analysis()
+		{
+			//Data for analysis. 2 Rows Matrix.
+			string[,] data = { {"Branch", "Customer type", "Gender", "Payment"},{"A", "Normal","Female","Credit card"} };
+			tree.Evaluar(data);
 		}
 	}
 }

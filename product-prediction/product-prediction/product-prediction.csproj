@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DecisionTree\DecisionTree.cs" />
+    <Compile Include="Tree\DecisionTree.cs" />
     <Compile Include="Model\Sale.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="UI\Inteface.cs">

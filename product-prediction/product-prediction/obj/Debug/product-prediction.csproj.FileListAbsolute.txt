@@ -48,3 +48,13 @@ C:\Users\aleja\Downloads\product-prediction-master\product-prediction\product-pr
 C:\Users\aleja\Downloads\product-prediction-master\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.CoreCompileInputs.cache
 C:\Users\aleja\Downloads\product-prediction-master\product-prediction\product-prediction\obj\Debug\product-prediction.exe
 C:\Users\aleja\Downloads\product-prediction-master\product-prediction\product-prediction\obj\Debug\product-prediction.pdb
+C:\Users\Gevorah\Downloads\product-prediction\product-prediction\product-prediction\bin\Debug\product-prediction.exe.config
+C:\Users\Gevorah\Downloads\product-prediction\product-prediction\product-prediction\bin\Debug\product-prediction.exe
+C:\Users\Gevorah\Downloads\product-prediction\product-prediction\product-prediction\bin\Debug\product-prediction.pdb
+C:\Users\Gevorah\Downloads\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csprojAssemblyReference.cache
+C:\Users\Gevorah\Downloads\product-prediction\product-prediction\product-prediction\obj\Debug\product_prediction.Properties.Resources.resources
+C:\Users\Gevorah\Downloads\product-prediction\product-prediction\product-prediction\obj\Debug\product_prediction.UI.Interface.resources
+C:\Users\Gevorah\Downloads\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.GenerateResource.cache
+C:\Users\Gevorah\Downloads\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.CoreCompileInputs.cache
+C:\Users\Gevorah\Downloads\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.exe
+C:\Users\Gevorah\Downloads\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.pdb
