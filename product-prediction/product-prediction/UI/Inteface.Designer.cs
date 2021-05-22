@@ -30,21 +30,21 @@ namespace product_prediction.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.data = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.columsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -66,20 +66,20 @@ namespace product_prediction.UI
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ourImplementButton = new System.Windows.Forms.Button();
-            this.branchComboBox = new System.Windows.Forms.ComboBox();
-            this.customerComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.libraryImpButton = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.resultLabel = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.libraryImpButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.PaymentComboBox = new System.Windows.Forms.ComboBox();
+            this.genderComboBox = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.customerComboBox = new System.Windows.Forms.ComboBox();
+            this.branchComboBox = new System.Windows.Forms.ComboBox();
+            this.ourImplementButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.columsChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pointChart)).BeginInit();
@@ -113,33 +113,33 @@ namespace product_prediction.UI
             // 
             // columsChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.columsChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.columsChart.Legends.Add(legend1);
+            chartArea6.Name = "ChartArea1";
+            this.columsChart.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.columsChart.Legends.Add(legend6);
             this.columsChart.Location = new System.Drawing.Point(9, 9);
             this.columsChart.Name = "columsChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.columsChart.Series.Add(series1);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.columsChart.Series.Add(series6);
             this.columsChart.Size = new System.Drawing.Size(300, 230);
             this.columsChart.TabIndex = 3;
             this.columsChart.Text = "chart1";
             // 
             // pointChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.pointChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.pointChart.Legends.Add(legend2);
+            chartArea7.Name = "ChartArea1";
+            this.pointChart.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.pointChart.Legends.Add(legend7);
             this.pointChart.Location = new System.Drawing.Point(315, 9);
             this.pointChart.Name = "pointChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.pointChart.Series.Add(series2);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.pointChart.Series.Add(series7);
             this.pointChart.Size = new System.Drawing.Size(300, 230);
             this.pointChart.TabIndex = 5;
             this.pointChart.Text = "chart3";
@@ -261,51 +261,51 @@ namespace product_prediction.UI
             // 
             // pieChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.pieChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.pieChart.Legends.Add(legend3);
+            chartArea8.Name = "ChartArea1";
+            this.pieChart.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.pieChart.Legends.Add(legend8);
             this.pieChart.Location = new System.Drawing.Point(641, 130);
             this.pieChart.Name = "pieChart";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.pieChart.Series.Add(series3);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.pieChart.Series.Add(series8);
             this.pieChart.Size = new System.Drawing.Size(340, 270);
             this.pieChart.TabIndex = 17;
             this.pieChart.Text = "chart1";
             // 
             // lineChart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.lineChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.lineChart.Legends.Add(legend4);
+            chartArea9.Name = "ChartArea1";
+            this.lineChart.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.lineChart.Legends.Add(legend9);
             this.lineChart.Location = new System.Drawing.Point(9, 290);
             this.lineChart.Name = "lineChart";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.lineChart.Series.Add(series4);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.lineChart.Series.Add(series9);
             this.lineChart.Size = new System.Drawing.Size(300, 230);
             this.lineChart.TabIndex = 18;
             this.lineChart.Text = "lineChart";
             // 
             // barChart
             // 
-            chartArea5.Name = "ChartArea1";
-            this.barChart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.barChart.Legends.Add(legend5);
+            chartArea10.Name = "ChartArea1";
+            this.barChart.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.barChart.Legends.Add(legend10);
             this.barChart.Location = new System.Drawing.Point(315, 290);
             this.barChart.Name = "barChart";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.barChart.Series.Add(series5);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.barChart.Series.Add(series10);
             this.barChart.Size = new System.Drawing.Size(320, 230);
             this.barChart.TabIndex = 19;
             this.barChart.Text = "lineChart";
@@ -364,8 +364,8 @@ namespace product_prediction.UI
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.libraryImpButton);
             this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.comboBox2);
-            this.tabPage3.Controls.Add(this.comboBox1);
+            this.tabPage3.Controls.Add(this.PaymentComboBox);
+            this.tabPage3.Controls.Add(this.genderComboBox);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Controls.Add(this.label4);
@@ -381,27 +381,115 @@ namespace product_prediction.UI
             this.tabPage3.Text = "Decision Tree";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // ourImplementButton
+            // resultLabel
             // 
-            this.ourImplementButton.Location = new System.Drawing.Point(41, 139);
-            this.ourImplementButton.Name = "ourImplementButton";
-            this.ourImplementButton.Size = new System.Drawing.Size(125, 23);
-            this.ourImplementButton.TabIndex = 0;
-            this.ourImplementButton.Text = "Our implementation";
-            this.ourImplementButton.UseVisualStyleBackColor = true;
-            this.ourImplementButton.Click += new System.EventHandler(this.button1_Click);
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.Location = new System.Drawing.Point(78, 246);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(0, 13);
+            this.resultLabel.TabIndex = 13;
+            this.resultLabel.Click += new System.EventHandler(this.label10_Click);
             // 
-            // branchComboBox
+            // label9
             // 
-            this.branchComboBox.FormattingEnabled = true;
-            this.branchComboBox.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
-            this.branchComboBox.Location = new System.Drawing.Point(68, 26);
-            this.branchComboBox.Name = "branchComboBox";
-            this.branchComboBox.Size = new System.Drawing.Size(78, 21);
-            this.branchComboBox.TabIndex = 1;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(44, 93);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(280, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Choose which implementation is going to do the pronostic:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(41, 205);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Result:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // libraryImpButton
+            // 
+            this.libraryImpButton.Location = new System.Drawing.Point(209, 139);
+            this.libraryImpButton.Name = "libraryImpButton";
+            this.libraryImpButton.Size = new System.Drawing.Size(124, 23);
+            this.libraryImpButton.TabIndex = 10;
+            this.libraryImpButton.Text = "Library implementation";
+            this.libraryImpButton.UseVisualStyleBackColor = true;
+            this.libraryImpButton.Click += new System.EventHandler(this.libraryImpButton_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(657, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Payment:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // PaymentComboBox
+            // 
+            this.PaymentComboBox.FormattingEnabled = true;
+            this.PaymentComboBox.Items.AddRange(new object[] {
+            "Ewallet",
+            "Cash",
+            "Credit card"});
+            this.PaymentComboBox.Location = new System.Drawing.Point(721, 26);
+            this.PaymentComboBox.Name = "PaymentComboBox";
+            this.PaymentComboBox.Size = new System.Drawing.Size(121, 21);
+            this.PaymentComboBox.TabIndex = 8;
+            // 
+            // genderComboBox
+            // 
+            this.genderComboBox.FormattingEnabled = true;
+            this.genderComboBox.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
+            this.genderComboBox.Location = new System.Drawing.Point(471, 24);
+            this.genderComboBox.Name = "genderComboBox";
+            this.genderComboBox.Size = new System.Drawing.Size(121, 21);
+            this.genderComboBox.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(408, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Gender:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(180, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Custom. Type:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Branch:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(223, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // customerComboBox
             // 
@@ -415,114 +503,27 @@ namespace product_prediction.UI
             this.customerComboBox.TabIndex = 2;
             this.customerComboBox.SelectedIndexChanged += new System.EventHandler(this.customerComboBox_SelectedIndexChanged);
             // 
-            // label1
+            // branchComboBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(223, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.branchComboBox.FormattingEnabled = true;
+            this.branchComboBox.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+            this.branchComboBox.Location = new System.Drawing.Point(68, 26);
+            this.branchComboBox.Name = "branchComboBox";
+            this.branchComboBox.Size = new System.Drawing.Size(78, 21);
+            this.branchComboBox.TabIndex = 1;
             // 
-            // label4
+            // ourImplementButton
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Branch:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(180, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Custom. Type:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(408, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Gender:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Female",
-            "Male"});
-            this.comboBox1.Location = new System.Drawing.Point(471, 24);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Ewallet",
-            "Cash",
-            "Credit card"});
-            this.comboBox2.Location = new System.Drawing.Point(721, 26);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 8;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(657, 29);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Payment:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // libraryImpButton
-            // 
-            this.libraryImpButton.Location = new System.Drawing.Point(209, 139);
-            this.libraryImpButton.Name = "libraryImpButton";
-            this.libraryImpButton.Size = new System.Drawing.Size(124, 23);
-            this.libraryImpButton.TabIndex = 10;
-            this.libraryImpButton.Text = "Library implementation";
-            this.libraryImpButton.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 205);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Result:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(44, 93);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(280, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Choose which implementation is going to do the pronostic:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // resultLabel
-            // 
-            this.resultLabel.AutoSize = true;
-            this.resultLabel.Location = new System.Drawing.Point(78, 246);
-            this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(0, 13);
-            this.resultLabel.TabIndex = 13;
-            this.resultLabel.Click += new System.EventHandler(this.label10_Click);
+            this.ourImplementButton.Location = new System.Drawing.Point(41, 139);
+            this.ourImplementButton.Name = "ourImplementButton";
+            this.ourImplementButton.Size = new System.Drawing.Size(125, 23);
+            this.ourImplementButton.TabIndex = 0;
+            this.ourImplementButton.Text = "Our implementation";
+            this.ourImplementButton.UseVisualStyleBackColor = true;
+            this.ourImplementButton.Click += new System.EventHandler(this.ourImpButton_Click);
             // 
             // Interface
             // 
@@ -581,8 +582,8 @@ namespace product_prediction.UI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox genderComboBox;
+        private System.Windows.Forms.ComboBox PaymentComboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button libraryImpButton;
         private System.Windows.Forms.Label label8;

@@ -80,3 +80,15 @@ C:\Users\Gevorah\Desktop\product-prediction\product-prediction\product-predictio
 C:\Users\Gevorah\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.CopyComplete
 C:\Users\Gevorah\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.exe
 C:\Users\Gevorah\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.pdb
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.dll.config
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.dll
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.MachineLearning.dll
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Math.Core.dll
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Math.dll
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Statistics.dll
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.xml
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.MachineLearning.xml
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Math.xml
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Math.Core.xml
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Statistics.xml
+C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.CopyComplete
