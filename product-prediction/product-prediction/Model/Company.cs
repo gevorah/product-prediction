@@ -13,7 +13,7 @@ namespace product_prediction.Model
     {
         private List<Sale> sales;
 		private const string File = @"data\information.csv";
-		private DecisionTree tree;
+		private DecisionTreeImplementation tree;
 		private DataTable dt;
 
 		public Company()
@@ -175,31 +175,36 @@ namespace product_prediction.Model
 			return dt;
 		}
 
-		public void Training() 
-		{
+		string[,] predictions;
+		List<string> labels;
+
+		public void SelectData(int index, int c)
+        {
 			//Predictions Matrix: Branch	Customer type	Gender	 Payment
 			//Labels List: Product line
-			string[,] predictions = new string[800,4];
-			List<string> labels = new List<string>();
+			predictions = new string[c, 4];
+			labels = new List<string>();
 			DataRow[] dr = dt.Select();
 			predictions[0, 0] = "Branch";
 			predictions[0, 1] = "Customer type";
 			predictions[0, 2] = "Gender";
 			predictions[0, 3] = "Payment";
 			labels.Add("Product line");
-			for (int i=1;i<800;i++)
-            {
-				Console.WriteLine();
-				predictions[i, 0] = dr[i-1]["Branch"].ToString();
-				predictions[i, 1] = dr[i-1]["Customer type"].ToString();
-				predictions[i, 2] = dr[i-1]["Gender"].ToString();
-				predictions[i, 3] = dr[i-1]["Payment"].ToString();
+			for (int i=index; i < c; i++)
+			{
+				predictions[i, 0] = dr[i - 1]["Branch"].ToString();
+				predictions[i, 1] = dr[i - 1]["Customer type"].ToString();
+				predictions[i, 2] = dr[i - 1]["Gender"].ToString();
+				predictions[i, 3] = dr[i - 1]["Payment"].ToString();
 				labels.Add(dr[i]["Product line"].ToString());
 			}
+        }
 
-			tree = new DecisionTree(predictions, labels);
+		public void Training() 
+		{
+			SelectData(1,800);
+			tree = new DecisionTreeImplementation(predictions, labels);
 			tree.PintarArbol("", true, "");
-
 		}
 
 		public void Analysis()
@@ -207,6 +212,15 @@ namespace product_prediction.Model
 			//Data for analysis. 2 Rows Matrix.
 			string[,] data = { {"Branch", "Customer type", "Gender", "Payment"},{"A", "Normal","Female","Credit card"} };
 			tree.Evaluar(data);
+		}
+
+		public string Evaluate(string branch, string ct, string gender, string payment)
+		{
+			Training();
+			String[,] data = { { "Branch", "Customer type", "Gender", "Payment" }, { branch, ct, gender,payment },};
+			string result= tree.Evaluar(data);
+			return result;
+		
 		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using Accord.MachineLearning.DecisionTrees;
 using Accord.MachineLearning.DecisionTrees.Learning;
 using Accord.Math;
+using Accord.Math.Optimization.Losses;
 using Accord.Statistics;
 using Accord.Statistics.Filters;
 using System;
@@ -19,48 +20,51 @@ namespace product_prediction.Tree
         {
             BuildTree(dt);
         }
-        
+
         [Obsolete]
-        //
         public void BuildTree(DataTable data)
         {
-
+            data.Columns.Remove("");
             var codebook = new Codification(data);
 
+            
             DataTable symbols = codebook.Apply(data);
-            int[][] inputs = symbols.ToArray<int>("Outlook", "Temperature", "Humidity", "Wind");
-            int[] outputs = symbols.ToArray<int>("PlayTennis");
+            int[][] inputs = symbols.ToArray<int>("Branch", "Customer Type", "Gender", "Payment");
+            int[] outputs = symbols.ToArray<int>("Product line");
 
+          
             var id3learning = new ID3Learning()
-             {
+            {
+                new DecisionVariable("Branch",     3), // 3 possible values (A, B, C)
+                new DecisionVariable("Customer Type", 2), // 2 possible values (Normal, Member)  
+                new DecisionVariable("Gender",    2), // 2 possible values (Female, Male)    
+                new DecisionVariable("Payment",        3)  // 3 possible values (Cash, Credit card and Ewallet) 
 
-    new DecisionVariable("Outlook",     3), // 3 possible values (Sunny, overcast, rain)
-    new DecisionVariable("Temperature", 3), // 3 possible values (Hot, mild, cool)  
-    new DecisionVariable("Humidity",    2), // 2 possible values (High, normal)    
-    new DecisionVariable("Wind",        2)  // 2 possible values (Weak, strong) 
-
-  
             };
 
-            DecisionTree tree = new DecisionTree(inputs: new[]
+            // Learn the training instances!
+            DecisionTree tree = id3learning.Learn(inputs, outputs);
+
+            // Compute the training error when predicting training instances
+            double error = new ZeroOneLoss(outputs).Loss(tree.Decide(inputs));
+
+            // The tree can now be queried for new examples through 
+            // its decide method. For example, we can create a query
+
+            int[] query = codebook.Transform(new[,]
             {
-                DecisionVariable.Continuous("X"),
-                DecisionVariable.Continuous("Y")
-            }, classes: 2);
+                { "Branch",     "Sunny"  },
+                { "Customer Type", "Hot"    },
+                { "Gender",    "High"   },
+                { "Payment",        "Strong" }
+            });
 
-            C45Learning teacher = new C45Learning(tree);
+            // And then predict the label using
+            int predicted = tree.Decide(query);  // result will be 0
 
-            outputs = outputs.Apply(x => x < 0 ? 0 : x);
+            // We can translate it back to strings using
+            string answer = codebook.Revert("PlayTennis", predicted); // Answer will be: "No"
 
-            double error = teacher.Run(inputs, outputs);
-
-            int[] answers = inputs.Apply(tree.Decide);
-
-
-
-            
-
-            
 
         }
     }
