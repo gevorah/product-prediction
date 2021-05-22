@@ -14,6 +14,7 @@ namespace product_prediction.Model
         private List<Sale> sales;
 		private const string File = @"data\information.csv";
 		private DecisionTreeImplementation tree;
+		private DecisionTreeLibrary treeL;
 		private DataTable dt;
 
 		public Company()
@@ -220,13 +221,33 @@ namespace product_prediction.Model
 			
 		}
 
-		public string Evaluate(string branch, string ct, string gender, string payment)
+		public string EvaluateImplementation(string branch, string ct, string gender, string payment)
 		{
 			Training();
 			String[,] data = { { "Branch", "Customer type", "Gender", "Payment" }, { branch, ct, gender,payment },};
 			string result= tree.Evaluar(data);
 			return result;
 		
+		}
+
+        [Obsolete]
+        public void createDecisionTreeLibrary()
+        {
+			treeL = new DecisionTreeLibrary();
+			treeL.BuildTree(dt);
+		}
+
+		[Obsolete]
+		public string EvaluateLibrary(string branch, string ct, string gender, string payment)
+		{
+			if (treeL == null)
+			{
+				createDecisionTreeLibrary();
+            }
+            
+			string result = treeL.Evaluate(branch,ct,gender,payment);
+			return result;
+
 		}
 	}
 }

@@ -32,7 +32,6 @@ namespace product_prediction.Tree
             data.Columns.Remove("Tax 5%");
             data.Columns.Remove("Total");
             data.Columns.Remove("DateTime");
-            data.Columns.Remove("Payment");
             data.Columns.Remove("cogs");
             data.Columns.Remove("gross margin percentage");
             data.Columns.Remove("gross income");
@@ -42,6 +41,8 @@ namespace product_prediction.Tree
             DataTable symbols = codebook.Apply(data);
             inputs = symbols.ToArray<int>("Branch", "Customer Type", "Gender", "Payment");
             outputs = symbols.ToArray<int>("Product line");
+
+            
         }
 
         [Obsolete]
@@ -69,7 +70,7 @@ namespace product_prediction.Tree
             int[] query = codebook.Transform(new[,]
             {
                 { "Branch", branch },
-                { "Customer Type", cType },
+                { "Customer type", cType },
                 { "Gender", gender },
                 { "Payment", payment }
             });

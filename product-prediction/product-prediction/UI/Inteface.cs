@@ -464,7 +464,7 @@ namespace product_prediction.UI
 				string genderChoose = genderComboBox.Text;
 				string paymentChoose = PaymentComboBox.Text;
 
-				string result = cp.Evaluate(branchChoose, customerChoose, genderChoose, paymentChoose);
+				string result = cp.EvaluateImplementation(branchChoose, customerChoose, genderChoose, paymentChoose);
 
 				resultLabel.Text = result;
 			
@@ -489,10 +489,26 @@ namespace product_prediction.UI
 
         }
 
+        [Obsolete]
         private void libraryImpButton_Click(object sender, EventArgs e)
         {
+			if (!(string.IsNullOrEmpty(branchComboBox.Text)) && !(string.IsNullOrEmpty(customerComboBox.Text)) && !(string.IsNullOrEmpty(genderComboBox.Text)) && !(string.IsNullOrEmpty(PaymentComboBox.Text)))
+			{
 
-        }
+				string branchChoose = branchComboBox.Text;
+				string customerChoose = customerComboBox.Text;
+				string genderChoose = genderComboBox.Text;
+				string paymentChoose = PaymentComboBox.Text;
+
+				string result = cp.EvaluateLibrary(branchChoose, customerChoose, genderChoose, paymentChoose);
+
+				resultLabel.Text = result;
+
+
+
+			}
+
+		}
     }
 
 }
