@@ -477,7 +477,7 @@ namespace product_prediction.UI
 			catch (Exception xep)
 			{
 				String msj = "Warning";
-				String rec = "Please select all the filds";
+				String rec = "Please select all the fields";
 				MessageBox.Show(rec, msj);
 			}
 
@@ -520,7 +520,7 @@ namespace product_prediction.UI
 			}catch(Exception xep)
             {
 				String msj = "Warning";
-				String rec = "Please select all the filds";
+				String rec = "Please select all the fields";
 				MessageBox.Show(rec, msj);
 			}
 
