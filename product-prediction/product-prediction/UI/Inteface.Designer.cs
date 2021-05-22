@@ -65,6 +65,7 @@ namespace product_prediction.UI
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.columsChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pointChart)).BeginInit();
@@ -298,6 +299,7 @@ namespace product_prediction.UI
             // 
             this.tabs.Controls.Add(this.tabPage1);
             this.tabs.Controls.Add(this.tabPage2);
+            this.tabs.Controls.Add(this.tabPage3);
             this.tabs.Location = new System.Drawing.Point(2, 0);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
@@ -339,6 +341,16 @@ namespace product_prediction.UI
             this.tabPage2.Size = new System.Drawing.Size(992, 554);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Graphics";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(992, 554);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Decision Tree";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // Interface
             // 
@@ -387,6 +399,7 @@ namespace product_prediction.UI
         private System.Windows.Forms.TabControl tabs;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }
 

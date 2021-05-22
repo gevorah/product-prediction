@@ -209,9 +209,15 @@ namespace product_prediction.Model
 
 		public void Analysis()
 		{
+			SelectData(800, 200);
 			//Data for analysis. 2 Rows Matrix.
-			string[,] data = { {"Branch", "Customer type", "Gender", "Payment"},{"A", "Normal","Female","Credit card"} };
-			tree.Evaluar(data);
+			for (int i=1;i<200;i++)
+            {
+				string[,] data = { { "Branch", "Customer type", "Gender", "Payment" }, 
+									{ predictions[i, 0], predictions[i, 1], predictions[i, 2], predictions[i, 3] } };
+				tree.Evaluar(data);
+			}
+			
 		}
 
 		public string Evaluate(string branch, string ct, string gender, string payment)
