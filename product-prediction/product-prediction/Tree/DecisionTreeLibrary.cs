@@ -1,8 +1,11 @@
 ﻿using Accord.MachineLearning.DecisionTrees;
 using Accord.MachineLearning.DecisionTrees.Learning;
 using Accord.Math;
+using Accord.Statistics;
+using Accord.Statistics.Filters;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +14,33 @@ namespace product_prediction.Tree
 {
     class DecisionTreeLibrary
     {
-        public DecisionTreeLibrary(double[][] inputs,int[] outputs)
+        [Obsolete]
+        public DecisionTreeLibrary(DataTable dt)
         {
-            BuildTree(inputs, outputs);
+            BuildTree(dt);
         }
-
-        public void BuildTree(double[][] inputs, int[] outputs)
+        
+        [Obsolete]
+        //
+        public void BuildTree(DataTable data)
         {
+
+            var codebook = new Codification(data);
+
+            DataTable symbols = codebook.Apply(data);
+            int[][] inputs = symbols.ToArray<int>("Outlook", "Temperature", "Humidity", "Wind");
+            int[] outputs = symbols.ToArray<int>("PlayTennis");
+
+            var id3learning = new ID3Learning()
+             {
+
+    new DecisionVariable("Outlook",     3), // 3 possible values (Sunny, overcast, rain)
+    new DecisionVariable("Temperature", 3), // 3 possible values (Hot, mild, cool)  
+    new DecisionVariable("Humidity",    2), // 2 possible values (High, normal)    
+    new DecisionVariable("Wind",        2)  // 2 possible values (Weak, strong) 
+
+  
+            };
 
             DecisionTree tree = new DecisionTree(inputs: new[]
             {
@@ -31,10 +54,15 @@ namespace product_prediction.Tree
 
             double error = teacher.Run(inputs, outputs);
 
-            int[] answers = inputs.Apply(tree.Compute);
+            int[] answers = inputs.Apply(tree.Decide);
+
+
+
+            
 
             
 
         }
     }
+
 }
