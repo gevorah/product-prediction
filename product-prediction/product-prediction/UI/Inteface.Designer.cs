@@ -390,7 +390,6 @@ namespace product_prediction.UI
             this.resultLabel.Name = "resultLabel";
             this.resultLabel.Size = new System.Drawing.Size(0, 13);
             this.resultLabel.TabIndex = 13;
-            this.resultLabel.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -400,7 +399,6 @@ namespace product_prediction.UI
             this.label9.Size = new System.Drawing.Size(205, 13);
             this.label9.TabIndex = 12;
             this.label9.Text = "Choose which implementation will forecast";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -410,7 +408,6 @@ namespace product_prediction.UI
             this.label8.Size = new System.Drawing.Size(198, 13);
             this.label8.TabIndex = 11;
             this.label8.Text = "That sale correspond to the product line:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // libraryImpButton
             // 

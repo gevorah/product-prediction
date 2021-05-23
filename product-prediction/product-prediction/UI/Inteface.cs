@@ -483,39 +483,19 @@ namespace product_prediction.UI
 
 		}
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         [Obsolete]
         private void libraryImpButton_Click(object sender, EventArgs e)
         {
 			try
 			{
-				
-
 					string branchChoose = branchComboBox.Text;
 					string customerChoose = customerComboBox.Text;
 					string genderChoose = genderComboBox.Text;
 					string paymentChoose = PaymentComboBox.Text;
 
-					string result = cp.EvaluateLibrary(branchChoose, customerChoose, genderChoose, paymentChoose);
-
+				string result = cp.EvaluateLibrary(branchChoose, customerChoose, genderChoose, paymentChoose);
+				    
 					resultLabel.Text = result;
-
-
-
 			
 			}catch(Exception xep)
             {

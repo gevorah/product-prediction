@@ -1,8 +1,10 @@
-﻿using Accord.MachineLearning.DecisionTrees;
+﻿using Accord.MachineLearning;
+using Accord.MachineLearning.DecisionTrees;
 using Accord.MachineLearning.DecisionTrees.Learning;
 using Accord.Math;
 using Accord.Math.Optimization.Losses;
 using Accord.Statistics;
+using Accord.Statistics.Analysis;
 using Accord.Statistics.Filters;
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,7 @@ namespace product_prediction.Tree
         int[][] inputs;
         int[] outputs;
 
-        public DecisionTreeLibrary(){}
+        public DecisionTreeLibrary() { }
 
         [Obsolete]
         private void Codificate(DataTable data)
@@ -42,7 +44,7 @@ namespace product_prediction.Tree
             inputs = symbols.ToArray<int>("Branch", "Customer Type", "Gender", "Payment");
             outputs = symbols.ToArray<int>("Product line");
 
-            
+
         }
 
         [Obsolete]
@@ -87,6 +89,51 @@ namespace product_prediction.Tree
             // Compute the training error when predicting training instances
             return new ZeroOneLoss(outputs).Loss(tree.Decide(inputs));
         }
-    }
 
+        public double Accuracy()
+        {
+            // Let's say we want to measure the cross-validation performance of
+            // a decision tree with a maximum tree height of 6 and where variables
+            // are able to join the decision path at most 1 times during evaluation:
+            var cv = CrossValidation.Create(
+
+                k: 10, // We will be using 10-fold cross validation
+
+                learner: (p) => new ID3Learning() // here we create the learning algorithm
+                {
+                    Join = 1,
+                    MaxHeight = 6
+                },
+
+                // This function can be used to perform any special
+                // operations before the actual learning is done, but
+                // here we will just leave it as simple as it can be:
+                fit: (teacher, x, y, w) => teacher.Learn(x, y, w),
+
+                // Now we have to specify how the tree performance should be measured:
+                loss: (actual, expected, p) => new ZeroOneLoss(expected).Loss(actual),
+
+                // Finally, we have to pass the input and output data
+                // that will be used in cross-validation. 
+                x: inputs, y: outputs
+            );
+
+            // After the cross-validation object has been created,
+            // we can call its .Learn method with the input and 
+            // output data that will be partitioned into the folds:
+            var result = cv.Learn(inputs, outputs);
+
+            // We can grab some information about the problem:
+            int numberOfSamples = result.NumberOfSamples; // should be 1000
+            int numberOfInputs = result.NumberOfInputs;   // should be 4
+            int numberOfOutputs = result.NumberOfOutputs; // should be 6
+
+            double trainingError = result.Training.Mean;
+            double validationError = result.Validation.Mean;
+
+            // If desired, compute an aggregate confusion matrix for the validation sets:
+            GeneralConfusionMatrix gcm = result.ToConfusionMatrix(inputs, outputs);
+            return gcm.Accuracy*100;
+        }
+    }
 }

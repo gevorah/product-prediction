@@ -245,8 +245,7 @@ namespace product_prediction.Model
 				createDecisionTreeLibrary();
             }
             
-			string result = treeL.Evaluate(branch,ct,gender,payment);
-			return result;
+			return treeL.Evaluate(branch,ct,gender,payment) + "\nAccuracy: " + treeL.Accuracy() +"%";
 
 		}
 	}
