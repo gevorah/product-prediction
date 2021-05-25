@@ -249,5 +249,35 @@ namespace product_prediction.Model
 			return treeL.Evaluate(branch,ct,gender,payment) + "\nAccuracy: " + treeL.Accuracy() +"%";
 
 		}
+
+		public string AccuracyOfImplementationTree()
+		{
+			DataTable data = dt;
+			string[] outputs = data.AsEnumerable().Select(x => x.Field<string>("Product line")).ToArray();
+			data.Columns.Remove("Invoice ID");
+			data.Columns.Remove("City");
+			data.Columns.Remove("Unit price");
+			data.Columns.Remove("Quantity");
+			data.Columns.Remove("Tax 5%");
+			data.Columns.Remove("Total");
+			data.Columns.Remove("DateTime");
+			data.Columns.Remove("cogs");
+			data.Columns.Remove("gross margin percentage");
+			data.Columns.Remove("gross income");
+			data.Columns.Remove("Rating");
+			data.Columns.Remove("Product line");
+			
+			string[,] inputs = new string[data.Rows.Count,4];
+			Converter<object, string> converter = Convert.ToString;
+			for (int i = 1; i < data.Rows.Count; i++)
+			{
+				for (int j = 0; j < data.Columns.Count; j++)
+				{
+					inputs[i, j] = data.Select( pr => pr.Field<string>[j]);
+				
+				}
+            }
+			return tree.Accuracy(outputs,inputs,sales.Count);
+        }
 	}
 }

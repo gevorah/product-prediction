@@ -332,5 +332,40 @@ namespace product_prediction.Tree
 
         }
 
+        public string Accuracy(string[] outputs,string[,] inputs,int sales)
+        {
+            string msj = "";
+            string[] predictions = new string[sales];
+            string[,] trainInputs = new string[0, 4];
+
+            for (int i = 0; i < sales; i++)
+            {
+                
+                for (int j = 0; j < 4; i++)
+                {
+                   
+                    trainInputs[0, j] = inputs[i, j];
+                }
+
+
+                string p = Evaluar(trainInputs);
+                predictions[i] = p;
+            }
+
+            int errors = 0;
+            for(int i = 0; i < sales; i++)
+            {
+                if (predictions[i] != outputs[i])
+                {
+                    errors++;
+                }
+            }
+
+            double accuracy = 100-(errors / sales);
+
+            msj = accuracy + " %";
+            return msj;
+        }
+
     }
 }
