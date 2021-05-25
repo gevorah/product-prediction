@@ -179,11 +179,11 @@ namespace product_prediction.Model
 		string[,] predictions;
 		List<string> labels;
 
-		public void SelectData(int index, int c)
-        {
+		public void Training() 
+		{
 			//Predictions Matrix: Branch	Customer type	Gender	 Payment
 			//Labels List: Product line
-			predictions = new string[c, 4];
+			predictions = new string[700, 4];
 			labels = new List<string>();
 			DataRow[] dr = dt.Select();
 			predictions[0, 0] = "Branch";
@@ -191,7 +191,7 @@ namespace product_prediction.Model
 			predictions[0, 2] = "Gender";
 			predictions[0, 3] = "Payment";
 			labels.Add("Product line");
-			for (int i=index; i < c; i++)
+			for (int i = 1; i < 700; i++)
 			{
 				predictions[i, 0] = dr[i - 1]["Branch"].ToString();
 				predictions[i, 1] = dr[i - 1]["Customer type"].ToString();
@@ -199,14 +199,8 @@ namespace product_prediction.Model
 				predictions[i, 3] = dr[i - 1]["Payment"].ToString();
 				labels.Add(dr[i]["Product line"].ToString());
 			}
-        }
-
-		public void Training() 
-		{
-			SelectData(1,700);
 			tree = new DecisionTreeImplementation(predictions, labels);
 			tree.PintarArbol("", true, "");
-			
 			Console.WriteLine(tree.getA());
 		}
 
