@@ -303,18 +303,21 @@ namespace product_prediction.Tree
             }
         }
 
+        public static string a = "";
+        public string getA() { return a; }
+
         public void PintarArbol(string identacion, bool ultimo, string valor)
         {
-            Console.Write(identacion);
+            a += "\n" + identacion;
             if (this.isLeaf)
             {
-                Console.WriteLine("\\--" + valor + "->" + this.majorityClass);
+                a += "\\--" + valor + "->" + this.majorityClass;
                 identacion += "  ";
             }
             else
             {
                 string cadenaPrevia = "|--" + valor + "->";
-                Console.WriteLine(cadenaPrevia + this.bestAttribute);
+                a += cadenaPrevia + this.bestAttribute;
                 identacion += "|".PadRight(cadenaPrevia.Length, ' ');
             }
 

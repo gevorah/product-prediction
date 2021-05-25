@@ -203,14 +203,16 @@ namespace product_prediction.Model
 
 		public void Training() 
 		{
-			SelectData(1,800);
+			SelectData(1,700);
 			tree = new DecisionTreeImplementation(predictions, labels);
 			tree.PintarArbol("", true, "");
+			
+			Console.WriteLine(tree.getA());
 		}
 
 		public void Analysis()
 		{
-			SelectData(800, 200);
+			SelectData(700, 300);
 			//Data for analysis. 2 Rows Matrix.
 			for (int i=1;i<200;i++)
             {
@@ -224,6 +226,7 @@ namespace product_prediction.Model
 		public string EvaluateImplementation(string branch, string ct, string gender, string payment)
 		{
 			Training();
+			Analysis();
 			String[,] data = { { "Branch", "Customer type", "Gender", "Payment" }, { branch, ct, gender,payment },};
 			string result= tree.Evaluar(data);
 			return result;
@@ -234,7 +237,12 @@ namespace product_prediction.Model
         public void createDecisionTreeLibrary()
         {
 			treeL = new DecisionTreeLibrary();
-			treeL.BuildTree(dt);
+			DataTable training = dt.Copy();
+			for (int i=999;i>699;i--)
+			{
+				training.Rows.RemoveAt(i);
+			}
+			treeL.BuildTree(training);
 		}
 
 		[Obsolete]

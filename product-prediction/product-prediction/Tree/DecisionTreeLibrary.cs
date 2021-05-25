@@ -97,12 +97,12 @@ namespace product_prediction.Tree
             // are able to join the decision path at most 1 times during evaluation:
             var cv = CrossValidation.Create(
 
-                k: 10, // We will be using 10-fold cross validation
+                k: 5, // We will be using 5-fold cross validation
 
                 learner: (p) => new ID3Learning() // here we create the learning algorithm
                 {
                     Join = 1,
-                    MaxHeight = 6
+                    MaxHeight = 0
                 },
 
                 // This function can be used to perform any special
