@@ -30,6 +30,7 @@ namespace product_prediction.UI
 		public void Init()
 		{
 			cp = new Company();
+			cp.Read();
 			dt = cp.GetDataTable();
 			data.DataSource = dt;
 			cbFilter.Visible = false;

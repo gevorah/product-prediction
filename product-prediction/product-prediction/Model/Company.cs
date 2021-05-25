@@ -21,11 +21,10 @@ namespace product_prediction.Model
         {
 			sales = new List<Sale>();
 			dt = new DataTable();
-			Read();
 		}
 
 		
-		private void Read()
+		public void Read()
 		{
 				try
 			{
