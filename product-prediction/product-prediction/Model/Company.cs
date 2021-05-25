@@ -212,12 +212,12 @@ namespace product_prediction.Model
 
 		public void Analysis()
 		{
-			SelectData(700, 300);
+			DataRow[] dr = dt.Select();
 			//Data for analysis. 2 Rows Matrix.
-			for (int i=1;i<200;i++)
+			for (int i=700;i<1000;i++)
             {
 				string[,] data = { { "Branch", "Customer type", "Gender", "Payment" }, 
-									{ predictions[i, 0], predictions[i, 1], predictions[i, 2], predictions[i, 3] } };
+									{ dr[i]["Branch"].ToString(), dr[i]["Customer type"].ToString(), dr[i]["Gender"].ToString(), dr[i]["Payment"].ToString() } };
 				tree.Evaluar(data);
 			}
 			
