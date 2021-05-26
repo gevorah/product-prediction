@@ -25,4 +25,4 @@ This software shows us reports with filters for string,quantitative and qualitat
 
 <br> Object diagram: https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/ObjectDiagram.pdf
 <br>
-<br> Class diagram: https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Class%20Diagram%20SuperMarket.jpg
+<br> Class diagram: https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Class%20Diagram.jpg
