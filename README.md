@@ -1,5 +1,7 @@
 # product-prediction
-This software shows us reports with filters for string,quantitative and qualitative data on the 17 columns of the dataset of the company ,5 differents graphics of the  and will help to make a predictive data analysis of sales of "TODO EN UNO" supermarket.
+This software shows us reports with filters for string,quantitative and qualitative data on the 17 columns of the dataset of the company ,5 differents graphics of the  and will help to make a predictive data analysis of sales of "TODO EN UNO" supermarket. Decision trees are used for predictions
+
+<br>This program use Accord library to implement a decision tree 
 
 
 <br> Programming Language: C#
