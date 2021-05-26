@@ -467,9 +467,10 @@ namespace product_prediction.UI
 				string genderChoose = genderComboBox.Text;
 				string paymentChoose = PaymentComboBox.Text;
 
-				string result = cp.EvaluateImplementation(branchChoose, customerChoose, genderChoose, paymentChoose);
+				string[] ev = cp.EvaluateImplementation(branchChoose, customerChoose, genderChoose, paymentChoose);
 
-				resultLabel.Text = result;
+				resultLabel.Text = ev[0];
+				treeStr.Text = ev[1];
 
 
 

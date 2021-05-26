@@ -178,7 +178,7 @@ namespace product_prediction.Model
 		string[,] predictions;
 		List<string> labels;
 
-		public void Training() 
+		public string Training() 
 		{
 			//Predictions Matrix: Branch	Customer type	Gender	 Payment
 			//Labels List: Product line
@@ -200,7 +200,7 @@ namespace product_prediction.Model
 			}
 			tree = new DecisionTreeImplementation(predictions, labels);
 			tree.PintarArbol("", true, "");
-			Console.WriteLine(tree.getA());
+			return tree.getSTree();
 		}
 
 		public void Analysis()
@@ -216,13 +216,11 @@ namespace product_prediction.Model
 			
 		}
 
-		public string EvaluateImplementation(string branch, string ct, string gender, string payment)
+		public string[] EvaluateImplementation(string branch, string ct, string gender, string payment)
 		{
-			Training();
-			Analysis();
+			string str = Training();
 			String[,] data = { { "Branch", "Customer type", "Gender", "Payment" }, { branch, ct, gender,payment },};
-			string result= tree.Evaluar(data);
-			return result;
+			return new string[] { tree.Evaluar(data) + "\nAccuracy: " + AccuracyOfImplementationTree() , str };
 		
 		}
 
@@ -246,7 +244,7 @@ namespace product_prediction.Model
 				createDecisionTreeLibrary();
             }
             
-			return treeL.Evaluate(branch,ct,gender,payment) + "\nAccuracy: " + treeL.Accuracy() +"%";
+			return treeL.Evaluate(branch,ct,gender,payment) + "\nAccuracy: " + treeL.Accuracy() + "%";
 
 		}
 
@@ -254,30 +252,16 @@ namespace product_prediction.Model
 		{
 			DataTable data = dt;
 			string[] outputs = data.AsEnumerable().Select(x => x.Field<string>("Product line")).ToArray();
-			data.Columns.Remove("Invoice ID");
-			data.Columns.Remove("City");
-			data.Columns.Remove("Unit price");
-			data.Columns.Remove("Quantity");
-			data.Columns.Remove("Tax 5%");
-			data.Columns.Remove("Total");
-			data.Columns.Remove("DateTime");
-			data.Columns.Remove("cogs");
-			data.Columns.Remove("gross margin percentage");
-			data.Columns.Remove("gross income");
-			data.Columns.Remove("Rating");
-			data.Columns.Remove("Product line");
-			
 			string[,] inputs = new string[data.Rows.Count,4];
-			Converter<object, string> converter = Convert.ToString;
-			for (int i = 1; i < data.Rows.Count; i++)
+			DataRow[] dr = dt.Select();
+			for (int i = 0; i < dr.Count(); i++)
 			{
-				for (int j = 0; j < data.Columns.Count; j++)
-				{
-					inputs[i, j] = data.Select( pr => pr.Field<string>[j]);
-				
-				}
-            }
-			return tree.Accuracy(outputs,inputs,sales.Count);
+				inputs[i, 0] = dr[i]["Branch"].ToString();
+				inputs[i, 1] = dr[i]["Customer type"].ToString();
+				inputs[i, 2] = dr[i]["Gender"].ToString();
+				inputs[i, 3] = dr[i]["Payment"].ToString();
+			}
+			return tree.Accuracy(inputs,outputs) + "%";
         }
 	}
 }

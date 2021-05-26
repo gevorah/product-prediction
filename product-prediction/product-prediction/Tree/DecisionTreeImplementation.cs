@@ -303,21 +303,21 @@ namespace product_prediction.Tree
             }
         }
 
-        public static string a = "";
-        public string getA() { return a; }
+        public static string sTree = "";
+        public string getSTree() { return sTree; }
 
         public void PintarArbol(string identacion, bool ultimo, string valor)
         {
-            a += "\n" + identacion;
+            sTree += "\n" + identacion;
             if (this.isLeaf)
             {
-                a += "\\--" + valor + "->" + this.majorityClass;
+                sTree += "\\--" + valor + "->" + this.majorityClass;
                 identacion += "  ";
             }
             else
             {
                 string cadenaPrevia = "|--" + valor + "->";
-                a += cadenaPrevia + this.bestAttribute;
+                sTree += cadenaPrevia + this.bestAttribute;
                 identacion += "|".PadRight(cadenaPrevia.Length, ' ');
             }
 
@@ -332,22 +332,23 @@ namespace product_prediction.Tree
 
         }
 
-        public string Accuracy(string[] outputs,string[,] inputs,int sales)
+        public float Accuracy(string[,] inputs, string[] outputs)
         {
-            string msj = "";
-            string[] predictions = new string[sales];
-            string[,] trainInputs = new string[0, 4];
+            int sales = outputs.Length;
+            string[] predictions = new string[inputs.Length];
+            string[,] trainInputs = new string[2, 4] 
+            { 
+                { "Branch", "Customer type", "Gender", "Payment" },
+                { "","","",""} 
+            };
 
             for (int i = 0; i < sales; i++)
             {
-                
-                for (int j = 0; j < 4; i++)
+                for(int j = 0; j < 4; j++)
                 {
-                   
-                    trainInputs[0, j] = inputs[i, j];
+
+                    trainInputs[1, j] = inputs[i, j];
                 }
-
-
                 string p = Evaluar(trainInputs);
                 predictions[i] = p;
             }
@@ -360,11 +361,7 @@ namespace product_prediction.Tree
                     errors++;
                 }
             }
-
-            double accuracy = 100-(errors / sales);
-
-            msj = accuracy + " %";
-            return msj;
+            return 100 - ( errors / sales );
         }
 
     }
