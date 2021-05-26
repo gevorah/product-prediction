@@ -17,10 +17,12 @@ This software shows us reports with filters for string,quantitative and qualitat
 <br>
 <br> Engineering method (1st,2nd,3rd,4th and 5 steps): https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Proyecto%20Final%20Integrador%20(1).pdf
 <br>
-<br> Sequences diagrams: (1)https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/GraphicsSequenceDiagram.jpg 
-<br> (2) https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/SequenceDiagramFilter.jpg 
-<br> (3) https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/SequenceDiagramTable.jpg
-<br>
+<br> Sequences diagrams: (1)https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/graphic%20Diagram.jpg
+<br> (2) https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Filter%20Sequence.jpg
+<br> (3) https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/TableSequenceDiagram.jpg
+<br> (4) https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Sequence%20Diagram%20Prediction.jpg
+<br> (5) https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Sequence%20Diagram%20Drwing%20tree.jpg
+
 <br> Object diagram: https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/ObjectDiagram.pdf
 <br>
 <br> Class diagram: https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Class%20Diagram%20SuperMarket.jpg
