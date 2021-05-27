@@ -16,6 +16,7 @@ This software shows us reports with filters for string,quantitative and qualitat
 
 <br> link of the software working (1st Stage) and our explaination: https://youtu.be/HJ2ycQv8rhg
 <br> link of the software working (2nd Stage) and our explaination: https://youtu.be/GcpkGwqHyKU
+<br> link of the software working (3rd Stage) and our explaination: https://youtu.be/uExlPcXZUfc
 <br>
 <br> Engineering method (1st,2nd,3rd,4th and 5 steps): https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Proyecto%20Final%20Integrador%20(1).pdf
 <br>
