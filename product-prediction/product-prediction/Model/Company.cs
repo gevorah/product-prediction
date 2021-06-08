@@ -7,6 +7,8 @@ using System.Data;
 using System.IO;
 using System.Globalization;
 using product_prediction.Tree;
+using product_prediction.Experiment;
+
 namespace product_prediction.Model
 {
     class Company
@@ -263,5 +265,22 @@ namespace product_prediction.Model
 			}
 			return tree.Accuracy(inputs,outputs) + "%";
         }
+
+		public string MakeExperiment(int predictions,string treeType,DecisionTreeImplementation tree,DecisionTreeLibrary treeL)
+        {
+			PPExperiment exp = new PPExperiment();
+			DataTable data = dt;
+			string[,] inputs = new string[data.Rows.Count, 4];
+			DataRow[] dr = dt.Select();
+			for (int i = 0; i < dr.Count(); i++)
+			{
+				inputs[i, 0] = dr[i]["Branch"].ToString();
+				inputs[i, 1] = dr[i]["Customer type"].ToString();
+				inputs[i, 2] = dr[i]["Gender"].ToString();
+				inputs[i, 3] = dr[i]["Payment"].ToString();
+			}
+
+			return exp.MakePrediction(predictions, treeType, inputs,tree, treeL);
+		}
 	}
 }
