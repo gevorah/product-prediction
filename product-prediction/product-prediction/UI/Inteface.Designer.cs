@@ -84,9 +84,9 @@ namespace product_prediction.UI
             this.branchComboBox = new System.Windows.Forms.ComboBox();
             this.ourImplementButton = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.Experiement = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btExperiement = new System.Windows.Forms.Button();
+            this.cbNpredictions = new System.Windows.Forms.ComboBox();
+            this.cbTree = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -571,9 +571,9 @@ namespace product_prediction.UI
             this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.label12);
             this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.comboBox2);
-            this.tabPage4.Controls.Add(this.comboBox1);
-            this.tabPage4.Controls.Add(this.Experiement);
+            this.tabPage4.Controls.Add(this.cbTree);
+            this.tabPage4.Controls.Add(this.cbNpredictions);
+            this.tabPage4.Controls.Add(this.btExperiement);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -582,30 +582,38 @@ namespace product_prediction.UI
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // Experiement
+            // btExperiement
             // 
-            this.Experiement.Location = new System.Drawing.Point(177, 136);
-            this.Experiement.Name = "Experiement";
-            this.Experiement.Size = new System.Drawing.Size(75, 23);
-            this.Experiement.TabIndex = 0;
-            this.Experiement.Text = "Experiment";
-            this.Experiement.UseVisualStyleBackColor = true;
+            this.btExperiement.Location = new System.Drawing.Point(177, 136);
+            this.btExperiement.Name = "btExperiement";
+            this.btExperiement.Size = new System.Drawing.Size(75, 23);
+            this.btExperiement.TabIndex = 0;
+            this.btExperiement.Text = "Experiment";
+            this.btExperiement.UseVisualStyleBackColor = true;
+            this.btExperiement.Click += new System.EventHandler(this.btExperiement_Click);
             // 
-            // comboBox1
+            // cbNpredictions
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(67, 51);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cbNpredictions.FormattingEnabled = true;
+            this.cbNpredictions.Items.AddRange(new object[] {
+            "5",
+            "10",
+            "15"});
+            this.cbNpredictions.Location = new System.Drawing.Point(67, 51);
+            this.cbNpredictions.Name = "cbNpredictions";
+            this.cbNpredictions.Size = new System.Drawing.Size(121, 21);
+            this.cbNpredictions.TabIndex = 1;
             // 
-            // comboBox2
+            // cbTree
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(241, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 2;
+            this.cbTree.FormattingEnabled = true;
+            this.cbTree.Items.AddRange(new object[] {
+            "Implementation",
+            "Library"});
+            this.cbTree.Location = new System.Drawing.Point(241, 51);
+            this.cbTree.Name = "cbTree";
+            this.cbTree.Size = new System.Drawing.Size(121, 21);
+            this.cbTree.TabIndex = 2;
             // 
             // label11
             // 
@@ -716,9 +724,9 @@ namespace product_prediction.UI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button Experiement;
+        private System.Windows.Forms.ComboBox cbTree;
+        private System.Windows.Forms.ComboBox cbNpredictions;
+        private System.Windows.Forms.Button btExperiement;
         private System.Windows.Forms.Label resultExperiement;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;

@@ -266,7 +266,7 @@ namespace product_prediction.Model
 			return tree.Accuracy(inputs,outputs) + "%";
         }
 
-		public string MakeExperiment(int predictions,string treeType,DecisionTreeImplementation tree,DecisionTreeLibrary treeL)
+		public string MakeExperiment(int predictions,string treeType)
         {
 			PPExperiment exp = new PPExperiment();
 			DataTable data = dt;

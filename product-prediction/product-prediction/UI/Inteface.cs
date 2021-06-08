@@ -512,6 +512,14 @@ namespace product_prediction.UI
         {
 
         }
+
+        private void btExperiement_Click(object sender, EventArgs e)
+        {
+			int predictions = (int)Int64.Parse(cbNpredictions.Text);
+			string tree = cbTree.Text;
+
+			cp.MakeExperiment(predictions, tree);
+        }
     }
 
 }
