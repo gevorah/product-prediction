@@ -18,7 +18,7 @@ namespace product_prediction.Experiment
         }
 
         [Obsolete]
-        public string MakePrediction(int predictions, string treeType, string[,] inputs, DecisionTreeImplementation tree, DecisionTreeLibrary treeL)
+        public string MakePrediction(int predictions, string treeType, string[,] inputs)
         {
             string pl = "";
             string msj = "";
@@ -45,12 +45,18 @@ namespace product_prediction.Experiment
                 }
                 if (treeType.Equals("Implementation"))
                 {
-                    pl += cp.EvaluateImplementation(trainInputs[1, 0], trainInputs[1, 1], trainInputs[1, 2], trainInputs[1, 3]) + "\n";
+                    pl += "\n"+cp.GetTreeImplementation().Evaluar(trainInputs) + "\nAccuracy: " + cp.AccuracyOfImplementationTree();
 
                 }
                 else
                 {
-                    pl += cp.EvaluateLibrary(trainInputs[1, 0], trainInputs[1, 1], trainInputs[1, 2], trainInputs[1, 3]) + "\n";
+                    DecisionTreeLibrary dtl = cp.GetTreeLibrary();
+                    if (dtl == null)
+                    {
+                        cp.createDecisionTreeLibrary();
+                    }
+                        pl += "\n" + cp.GetTreeLibrary().Evaluate(trainInputs[1, 0], trainInputs[1, 1], trainInputs[1, 2], trainInputs[1, 3])+ "\nAccuracy: " + cp.GetTreeLibrary().Accuracy() + "%"; ;
+                    
                 }
 
                 

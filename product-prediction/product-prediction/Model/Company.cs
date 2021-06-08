@@ -16,7 +16,7 @@ namespace product_prediction.Model
         private List<Sale> sales;
 		private const string File = @"data\information.csv";
 		private DecisionTreeImplementation tree;
-		private DecisionTreeLibrary treeL;
+		private DecisionTreeLibrary treeL; 
 		private DataTable dt;
 
 		public Company()
@@ -177,6 +177,15 @@ namespace product_prediction.Model
 			return dt;
 		}
 
+		public DecisionTreeImplementation GetTreeImplementation()
+		{
+			return tree;
+		}
+		public DecisionTreeLibrary GetTreeLibrary()
+		{
+			return treeL;
+		}
+
 		string[,] predictions;
 		List<string> labels;
 
@@ -266,9 +275,10 @@ namespace product_prediction.Model
 			return tree.Accuracy(inputs,outputs) + "%";
         }
 
-		public string MakeExperiment(int predictions,string treeType)
+        [Obsolete]
+        public string MakeExperiment(int predictions,string treeType)
         {
-			PPExperiment exp = new PPExperiment();
+			PPExperiment exp = new PPExperiment(this);
 			DataTable data = dt;
 			string[,] inputs = new string[data.Rows.Count, 4];
 			DataRow[] dr = dt.Select();
@@ -280,7 +290,7 @@ namespace product_prediction.Model
 				inputs[i, 3] = dr[i]["Payment"].ToString();
 			}
 
-			return exp.MakePrediction(predictions, treeType, inputs,tree, treeL);
+			return exp.MakePrediction(predictions, treeType, inputs);
 		}
 	}
 }

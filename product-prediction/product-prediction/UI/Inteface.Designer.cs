@@ -579,7 +579,7 @@ namespace product_prediction.UI
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(992, 554);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "Experiment";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // btExperiement

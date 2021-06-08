@@ -133,7 +133,7 @@ namespace product_prediction.Tree
 
             // If desired, compute an aggregate confusion matrix for the validation sets:
             GeneralConfusionMatrix gcm = result.ToConfusionMatrix(inputs, outputs);
-            return gcm.Accuracy*100;
+            return (gcm.Accuracy*100);
         }
     }
 }
