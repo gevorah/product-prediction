@@ -1,4 +1,5 @@
-﻿using product_prediction.Tree;
+﻿using product_prediction.Model;
+using product_prediction.Tree;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,7 +11,13 @@ namespace product_prediction.Experiment
 {
     class PPExperiment
     {
+        Company cp;
+        public PPExperiment(Company c)
+        {
+            cp = c;
+        }
 
+        [Obsolete]
         public string MakePrediction(int predictions, string treeType, string[,] inputs, DecisionTreeImplementation tree, DecisionTreeLibrary treeL)
         {
             string pl = "";
@@ -24,26 +31,29 @@ namespace product_prediction.Experiment
                 { "Branch", "Customer type", "Gender", "Payment" },
                 { "","","",""}
             };
-
+            Random rd = new Random();
             for (int i = 0; i < predictions; i++)
             {
-                Random rd = new Random();
+                
                 int random = rd.Next(1, 999);
+                
                 for (int j = 0; j < 4; j++)
                 {
 
                     trainInputs[1, j] = inputs[random, j];
+
                 }
                 if (treeType.Equals("Implementation"))
                 {
-                    pl+=tree.Evaluar(trainInputs)+"\n";
+                    pl += cp.EvaluateImplementation(trainInputs[1, 0], trainInputs[1, 1], trainInputs[1, 2], trainInputs[1, 3]) + "\n";
+
                 }
                 else
                 {
-                   pl+= treeL.Evaluate(trainInputs[1, 0], trainInputs[1, 1], trainInputs[1, 2], trainInputs[1, 3])+"\n";
+                    pl += cp.EvaluateLibrary(trainInputs[1, 0], trainInputs[1, 1], trainInputs[1, 2], trainInputs[1, 3]) + "\n";
                 }
-                
 
+                
                  
             }
 
