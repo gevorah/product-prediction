@@ -49,7 +49,7 @@ namespace product_prediction.Experiment
 
             time.Stop();
             t = time.Elapsed.TotalMilliseconds;
-            msj = "Time : t" + "\n" + "Predictions : " + pl;
+            msj = "Time : "+ t + "\n" + "Predictions : " + pl;
             return msj; 
         }
     }

@@ -515,11 +515,21 @@ namespace product_prediction.UI
 
         private void btExperiement_Click(object sender, EventArgs e)
         {
-			int predictions = (int)Int64.Parse(cbNpredictions.Text);
-			string tree = cbTree.Text;
+			try
+			{
+				int predictions = (int)Int64.Parse(cbNpredictions.Text);
+				string tree = cbTree.Text;
 
-			cp.MakeExperiment(predictions, tree);
-        }
+
+				resultExperiement.Text = cp.MakeExperiment(predictions, tree);
+			}catch(Exception esp)
+            {
+				String msj = "Warning";
+				String rec = "Please select all the fields for experiment";
+				MessageBox.Show(rec, msj);
+
+			}
+		}
     }
 
 }
