@@ -30,21 +30,21 @@ namespace product_prediction.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.data = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.columsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -66,6 +66,8 @@ namespace product_prediction.UI
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.treeStr = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.resultLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -81,8 +83,14 @@ namespace product_prediction.UI
             this.customerComboBox = new System.Windows.Forms.ComboBox();
             this.branchComboBox = new System.Windows.Forms.ComboBox();
             this.ourImplementButton = new System.Windows.Forms.Button();
-            this.treeStr = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.Experiement = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.resultExperiement = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.columsChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pointChart)).BeginInit();
@@ -94,6 +102,7 @@ namespace product_prediction.UI
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // data
@@ -117,33 +126,33 @@ namespace product_prediction.UI
             // 
             // columsChart
             // 
-            chartArea11.Name = "ChartArea1";
-            this.columsChart.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.columsChart.Legends.Add(legend11);
+            chartArea1.Name = "ChartArea1";
+            this.columsChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.columsChart.Legends.Add(legend1);
             this.columsChart.Location = new System.Drawing.Point(9, 9);
             this.columsChart.Name = "columsChart";
-            series11.ChartArea = "ChartArea1";
-            series11.Legend = "Legend1";
-            series11.Name = "Series1";
-            this.columsChart.Series.Add(series11);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.columsChart.Series.Add(series1);
             this.columsChart.Size = new System.Drawing.Size(300, 230);
             this.columsChart.TabIndex = 3;
             this.columsChart.Text = "chart1";
             // 
             // pointChart
             // 
-            chartArea12.Name = "ChartArea1";
-            this.pointChart.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.pointChart.Legends.Add(legend12);
+            chartArea2.Name = "ChartArea1";
+            this.pointChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.pointChart.Legends.Add(legend2);
             this.pointChart.Location = new System.Drawing.Point(315, 9);
             this.pointChart.Name = "pointChart";
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.pointChart.Series.Add(series12);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.pointChart.Series.Add(series2);
             this.pointChart.Size = new System.Drawing.Size(300, 230);
             this.pointChart.TabIndex = 5;
             this.pointChart.Text = "chart3";
@@ -265,51 +274,51 @@ namespace product_prediction.UI
             // 
             // pieChart
             // 
-            chartArea13.Name = "ChartArea1";
-            this.pieChart.ChartAreas.Add(chartArea13);
-            legend13.Name = "Legend1";
-            this.pieChart.Legends.Add(legend13);
+            chartArea3.Name = "ChartArea1";
+            this.pieChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.pieChart.Legends.Add(legend3);
             this.pieChart.Location = new System.Drawing.Point(641, 130);
             this.pieChart.Name = "pieChart";
-            series13.ChartArea = "ChartArea1";
-            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series13.Legend = "Legend1";
-            series13.Name = "Series1";
-            this.pieChart.Series.Add(series13);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.pieChart.Series.Add(series3);
             this.pieChart.Size = new System.Drawing.Size(340, 270);
             this.pieChart.TabIndex = 17;
             this.pieChart.Text = "chart1";
             // 
             // lineChart
             // 
-            chartArea14.Name = "ChartArea1";
-            this.lineChart.ChartAreas.Add(chartArea14);
-            legend14.Name = "Legend1";
-            this.lineChart.Legends.Add(legend14);
+            chartArea4.Name = "ChartArea1";
+            this.lineChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.lineChart.Legends.Add(legend4);
             this.lineChart.Location = new System.Drawing.Point(9, 290);
             this.lineChart.Name = "lineChart";
-            series14.ChartArea = "ChartArea1";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series14.Legend = "Legend1";
-            series14.Name = "Series1";
-            this.lineChart.Series.Add(series14);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.lineChart.Series.Add(series4);
             this.lineChart.Size = new System.Drawing.Size(300, 230);
             this.lineChart.TabIndex = 18;
             this.lineChart.Text = "lineChart";
             // 
             // barChart
             // 
-            chartArea15.Name = "ChartArea1";
-            this.barChart.ChartAreas.Add(chartArea15);
-            legend15.Name = "Legend1";
-            this.barChart.Legends.Add(legend15);
+            chartArea5.Name = "ChartArea1";
+            this.barChart.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.barChart.Legends.Add(legend5);
             this.barChart.Location = new System.Drawing.Point(315, 290);
             this.barChart.Name = "barChart";
-            series15.ChartArea = "ChartArea1";
-            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series15.Legend = "Legend1";
-            series15.Name = "Series1";
-            this.barChart.Series.Add(series15);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.barChart.Series.Add(series5);
             this.barChart.Size = new System.Drawing.Size(320, 230);
             this.barChart.TabIndex = 19;
             this.barChart.Text = "lineChart";
@@ -319,6 +328,7 @@ namespace product_prediction.UI
             this.tabs.Controls.Add(this.tabPage1);
             this.tabs.Controls.Add(this.tabPage2);
             this.tabs.Controls.Add(this.tabPage3);
+            this.tabs.Controls.Add(this.tabPage4);
             this.tabs.Location = new System.Drawing.Point(2, 0);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
@@ -386,6 +396,24 @@ namespace product_prediction.UI
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Decision Tree";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.treeStr);
+            this.panel1.Location = new System.Drawing.Point(471, 93);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(435, 428);
+            this.panel1.TabIndex = 17;
+            // 
+            // treeStr
+            // 
+            this.treeStr.AutoSize = true;
+            this.treeStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.treeStr.Location = new System.Drawing.Point(3, 6);
+            this.treeStr.Name = "treeStr";
+            this.treeStr.Size = new System.Drawing.Size(0, 15);
+            this.treeStr.TabIndex = 15;
             // 
             // label10
             // 
@@ -537,23 +565,83 @@ namespace product_prediction.UI
             this.ourImplementButton.UseVisualStyleBackColor = true;
             this.ourImplementButton.Click += new System.EventHandler(this.ourImpButton_Click);
             // 
-            // treeStr
+            // tabPage4
             // 
-            this.treeStr.AutoSize = true;
-            this.treeStr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.treeStr.Location = new System.Drawing.Point(3, 6);
-            this.treeStr.Name = "treeStr";
-            this.treeStr.Size = new System.Drawing.Size(0, 15);
-            this.treeStr.TabIndex = 15;
+            this.tabPage4.Controls.Add(this.resultExperiement);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.comboBox2);
+            this.tabPage4.Controls.Add(this.comboBox1);
+            this.tabPage4.Controls.Add(this.Experiement);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(992, 554);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // Experiement
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.treeStr);
-            this.panel1.Location = new System.Drawing.Point(471, 93);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(435, 428);
-            this.panel1.TabIndex = 17;
+            this.Experiement.Location = new System.Drawing.Point(177, 136);
+            this.Experiement.Name = "Experiement";
+            this.Experiement.Size = new System.Drawing.Size(75, 23);
+            this.Experiement.TabIndex = 0;
+            this.Experiement.Text = "Experiment";
+            this.Experiement.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(67, 51);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(241, 51);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(83, 35);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Number predictions";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(255, 35);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 13);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Type of tree";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(129, 193);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Result: ";
+            // 
+            // resultExperiement
+            // 
+            this.resultExperiement.AutoSize = true;
+            this.resultExperiement.Location = new System.Drawing.Point(191, 193);
+            this.resultExperiement.Name = "resultExperiement";
+            this.resultExperiement.Size = new System.Drawing.Size(0, 13);
+            this.resultExperiement.TabIndex = 6;
             // 
             // Interface
             // 
@@ -579,6 +667,8 @@ namespace product_prediction.UI
             this.tabPage3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,6 +714,14 @@ namespace product_prediction.UI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label treeStr;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button Experiement;
+        private System.Windows.Forms.Label resultExperiement;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }
 

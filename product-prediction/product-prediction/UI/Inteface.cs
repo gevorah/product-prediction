@@ -507,6 +507,11 @@ namespace product_prediction.UI
 			}
 
 		}
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
