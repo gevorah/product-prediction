@@ -33,4 +33,4 @@ This software shows us reports with filters for string,quantitative and qualitat
 <br>
 <br> Excel with the analysis ANOVA of the experiement: https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Fase%20de%20Analisis.xlsx
 <br>
-<br>
+<br> Experiment documentation: https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Experimento%20Proyecto.pdf
