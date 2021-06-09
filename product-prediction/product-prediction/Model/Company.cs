@@ -236,7 +236,7 @@ namespace product_prediction.Model
 		}
 
         [Obsolete]
-        public void createDecisionTreeLibrary()
+        public void CreateDecisionTreeLibrary()
         {
 			treeL = new DecisionTreeLibrary();
 			DataTable training = dt.Copy();
@@ -252,7 +252,7 @@ namespace product_prediction.Model
 		{
 			if (treeL == null)
 			{
-				createDecisionTreeLibrary();
+				CreateDecisionTreeLibrary();
             }
             
 			return treeL.Evaluate(branch,ct,gender,payment) + "\nAccuracy: " + treeL.Accuracy() + "%";
@@ -263,24 +263,13 @@ namespace product_prediction.Model
 		{
 			DataTable data = dt;
 			string[] outputs = data.AsEnumerable().Select(x => x.Field<string>("Product line")).ToArray();
-			string[,] inputs = new string[data.Rows.Count,4];
-			DataRow[] dr = dt.Select();
-			for (int i = 0; i < dr.Count(); i++)
-			{
-				inputs[i, 0] = dr[i]["Branch"].ToString();
-				inputs[i, 1] = dr[i]["Customer type"].ToString();
-				inputs[i, 2] = dr[i]["Gender"].ToString();
-				inputs[i, 3] = dr[i]["Payment"].ToString();
-			}
+			string[,] inputs = MakeInputs();
 			return tree.Accuracy(inputs,outputs) + "%";
         }
 
-        [Obsolete]
-        public string MakeExperiment(int predictions,string treeType)
+        public string[,] MakeInputs()
         {
-			PPExperiment exp = new PPExperiment(this);
-			DataTable data = dt;
-			string[,] inputs = new string[data.Rows.Count, 4];
+			string[,] inputs = new string[dt.Rows.Count, 4];
 			DataRow[] dr = dt.Select();
 			for (int i = 0; i < dr.Count(); i++)
 			{
@@ -289,8 +278,7 @@ namespace product_prediction.Model
 				inputs[i, 2] = dr[i]["Gender"].ToString();
 				inputs[i, 3] = dr[i]["Payment"].ToString();
 			}
-
-			return exp.MakePrediction(predictions, treeType, inputs);
+			return inputs;
 		}
 	}
 }

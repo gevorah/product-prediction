@@ -12,6 +12,7 @@ using System.IO;
 using System.Globalization;
 using System.Collections;
 using System.Windows.Forms.DataVisualization.Charting;
+using product_prediction.Experiment;
 
 namespace product_prediction.UI
 {
@@ -19,6 +20,7 @@ namespace product_prediction.UI
 	{
 
 		private Company cp;
+		private TimeExperiment exp;
 		private DataTable dt;
 
 		public Interface()
@@ -27,7 +29,8 @@ namespace product_prediction.UI
 			Init();
 		}
 
-		public void Init()
+        [Obsolete]
+        public void Init()
 		{
 			cp = new Company();
 			cp.Read();
@@ -42,6 +45,9 @@ namespace product_prediction.UI
 			FilterRange.Visible = false;
 			Graphics();
 			cp.Training();
+			cp.CreateDecisionTreeLibrary();
+			exp = new TimeExperiment(cp);
+			dataExp.DataSource = exp.GetExpDataTable();
 			//cp.Analysis();
 		}
 
@@ -508,28 +514,6 @@ namespace product_prediction.UI
 
 		}
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btExperiement_Click(object sender, EventArgs e)
-        {
-			try
-			{
-				int predictions = (int)Int64.Parse(cbNpredictions.Text);
-				string tree = cbTree.Text;
-
-
-				resultExperiement.Text = cp.MakeExperiment(predictions, tree);
-			}catch(Exception esp)
-            {
-				String msj = "Warning";
-				String rec = "Please select all the fields for experiment";
-				MessageBox.Show(rec, msj);
-
-			}
-		}
     }
 
 }

@@ -64,7 +64,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Experiment\PPExperiment.cs" />
     <Compile Include="Experiment\TimeExperiment.cs" />
     <Compile Include="Model\Sale.cs" />
     <Compile Include="Model\Company.cs" />

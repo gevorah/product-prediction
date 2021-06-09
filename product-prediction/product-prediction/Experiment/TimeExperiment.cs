@@ -17,12 +17,14 @@ namespace product_prediction.Experiment
     {
         Company cp;
         DataTable dt;
+        string[,] inputs;
 
         public TimeExperiment(Company c)
         {
             cp = c;
             dt = new DataTable();
             CreateTable();
+            CreateExperiment();
         }
 
         public void CreateTable()
@@ -36,6 +38,7 @@ namespace product_prediction.Experiment
 
         private void CreateExperiment()
         {
+            inputs = cp.MakeInputs();
             int repetition = 1;
             var seed = Environment.TickCount;
             var random = new Random(seed);
@@ -121,55 +124,54 @@ namespace product_prediction.Experiment
             {
 
                 case 1:
-                    
+                    MakePredictions(5,1);
                     time.Stop();
                     t = time.Elapsed.TotalMilliseconds;
                     dt.Rows.Add("1", "1", t, "1");
                     break;
 
                 case 2:
-                    
+                    MakePredictions(10, 1);
                     time.Stop();
                     t = time.Elapsed.TotalMilliseconds;
                     dt.Rows.Add("1", "2", t, "2");
                     break;
 
                 case 3:
-                  
+
+                    MakePredictions(15, 1);
                     time.Stop();
                     t = time.Elapsed.TotalMilliseconds;
                     dt.Rows.Add("1", "3", t, "3");
                     break;
 
                 case 4:
-                    
+                    MakePredictions(5, 2);
                     time.Stop();
                     t = time.Elapsed.TotalMilliseconds;
                     dt.Rows.Add("2", "1", t, "4");
                     break;
 
                 case 5:
-                   
+                    MakePredictions(10, 2);
                     time.Stop();
                     t = time.Elapsed.TotalMilliseconds;
                     dt.Rows.Add("2", "2", t, "5");
                     break;
 
                 case 6:
-                   
+                    MakePredictions(15, 2);
                     time.Stop();
                     t = time.Elapsed.TotalMilliseconds;
                     dt.Rows.Add("2", "2", t, "6");
                     break;
-
-               
             }
 
 
         }
 
 
-        public void MakePredictions(int predictions, int type, string[,] inputs)
+        public void MakePredictions(int predictions, int type)
         {
             string[,] trainInputs = new string[2, 4]
             {
@@ -179,20 +181,26 @@ namespace product_prediction.Experiment
             Random rd = new Random();
             for (int i = 0; i < predictions; i++)
             {
-
-                int random = rd.Next(1, 999);
+                int random = rd.Next(0, 1000);
 
                 for (int j = 0; j < 4; j++)
                 {
-
                     trainInputs[1, j] = inputs[random, j];
-
+                }
+                if (type == 1)
+                {
+                    cp.GetTreeImplementation().Evaluar(trainInputs);
+                }
+                else
+                {
+                    cp.GetTreeLibrary().Evaluate(trainInputs[1, 0], trainInputs[1, 1], trainInputs[1, 2], trainInputs[1, 3]);
                 }
             }
         }
 
+        public DataTable GetExpDataTable()
+        {
+            return dt;
+        }
     }
-
-
-}
 }

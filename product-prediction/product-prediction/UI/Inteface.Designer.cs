@@ -84,13 +84,7 @@ namespace product_prediction.UI
             this.branchComboBox = new System.Windows.Forms.ComboBox();
             this.ourImplementButton = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btExperiement = new System.Windows.Forms.Button();
-            this.cbNpredictions = new System.Windows.Forms.ComboBox();
-            this.cbTree = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.resultExperiement = new System.Windows.Forms.Label();
+            this.dataExp = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.columsChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pointChart)).BeginInit();
@@ -103,6 +97,7 @@ namespace product_prediction.UI
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataExp)).BeginInit();
             this.SuspendLayout();
             // 
             // data
@@ -567,13 +562,7 @@ namespace product_prediction.UI
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.resultExperiement);
-            this.tabPage4.Controls.Add(this.label13);
-            this.tabPage4.Controls.Add(this.label12);
-            this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.cbTree);
-            this.tabPage4.Controls.Add(this.cbNpredictions);
-            this.tabPage4.Controls.Add(this.btExperiement);
+            this.tabPage4.Controls.Add(this.dataExp);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -582,74 +571,13 @@ namespace product_prediction.UI
             this.tabPage4.Text = "Experiment";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // btExperiement
+            // dataExp
             // 
-            this.btExperiement.Location = new System.Drawing.Point(177, 136);
-            this.btExperiement.Name = "btExperiement";
-            this.btExperiement.Size = new System.Drawing.Size(75, 23);
-            this.btExperiement.TabIndex = 0;
-            this.btExperiement.Text = "Experiment";
-            this.btExperiement.UseVisualStyleBackColor = true;
-            this.btExperiement.Click += new System.EventHandler(this.btExperiement_Click);
-            // 
-            // cbNpredictions
-            // 
-            this.cbNpredictions.FormattingEnabled = true;
-            this.cbNpredictions.Items.AddRange(new object[] {
-            "5",
-            "10",
-            "15"});
-            this.cbNpredictions.Location = new System.Drawing.Point(67, 51);
-            this.cbNpredictions.Name = "cbNpredictions";
-            this.cbNpredictions.Size = new System.Drawing.Size(121, 21);
-            this.cbNpredictions.TabIndex = 1;
-            // 
-            // cbTree
-            // 
-            this.cbTree.FormattingEnabled = true;
-            this.cbTree.Items.AddRange(new object[] {
-            "Implementation",
-            "Library"});
-            this.cbTree.Location = new System.Drawing.Point(241, 51);
-            this.cbTree.Name = "cbTree";
-            this.cbTree.Size = new System.Drawing.Size(121, 21);
-            this.cbTree.TabIndex = 2;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(83, 35);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Number predictions";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(255, 35);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 13);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Type of tree";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(129, 193);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 13);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Result: ";
-            // 
-            // resultExperiement
-            // 
-            this.resultExperiement.AutoSize = true;
-            this.resultExperiement.Location = new System.Drawing.Point(191, 193);
-            this.resultExperiement.Name = "resultExperiement";
-            this.resultExperiement.Size = new System.Drawing.Size(0, 13);
-            this.resultExperiement.TabIndex = 6;
+            this.dataExp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataExp.Location = new System.Drawing.Point(11, 45);
+            this.dataExp.Name = "dataExp";
+            this.dataExp.Size = new System.Drawing.Size(970, 500);
+            this.dataExp.TabIndex = 2;
             // 
             // Interface
             // 
@@ -676,7 +604,7 @@ namespace product_prediction.UI
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataExp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -723,13 +651,7 @@ namespace product_prediction.UI
         private System.Windows.Forms.Label treeStr;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cbTree;
-        private System.Windows.Forms.ComboBox cbNpredictions;
-        private System.Windows.Forms.Button btExperiement;
-        private System.Windows.Forms.Label resultExperiement;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dataExp;
     }
 }
 
