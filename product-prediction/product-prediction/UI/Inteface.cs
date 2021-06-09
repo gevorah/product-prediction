@@ -437,31 +437,6 @@ namespace product_prediction.UI
 
 		}
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customerComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ourImpButton_Click(object sender, EventArgs e)
         {
 			try

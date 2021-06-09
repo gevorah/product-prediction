@@ -463,7 +463,6 @@ namespace product_prediction.UI
             this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 9;
             this.label7.Text = "Payment:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // PaymentComboBox
             // 
@@ -496,7 +495,6 @@ namespace product_prediction.UI
             this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 6;
             this.label6.Text = "Gender:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -506,7 +504,6 @@ namespace product_prediction.UI
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "Custom type:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -524,7 +521,6 @@ namespace product_prediction.UI
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 3;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // customerComboBox
             // 
@@ -536,7 +532,6 @@ namespace product_prediction.UI
             this.customerComboBox.Name = "customerComboBox";
             this.customerComboBox.Size = new System.Drawing.Size(121, 21);
             this.customerComboBox.TabIndex = 2;
-            this.customerComboBox.SelectedIndexChanged += new System.EventHandler(this.customerComboBox_SelectedIndexChanged);
             // 
             // branchComboBox
             // 
