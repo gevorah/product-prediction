@@ -92,3 +92,15 @@ C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-predict
 C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Math.Core.xml
 C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Statistics.xml
 C:\Users\Alexander\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.CopyComplete
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.dll.config
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.dll
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.MachineLearning.dll
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Math.Core.dll
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Math.dll
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Statistics.dll
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.xml
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.MachineLearning.xml
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Math.xml
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Math.Core.xml
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\bin\Debug\Accord.Statistics.xml
+C:\Users\Aspire F 15\Desktop\product-prediction\product-prediction\product-prediction\obj\Debug\product-prediction.csproj.CopyComplete
