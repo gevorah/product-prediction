@@ -30,3 +30,7 @@ This software shows us reports with filters for string,quantitative and qualitat
 <br> Object diagram: https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/ObjectDiagram.pdf
 <br>
 <br> Class diagram: https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Class%20Diagram.jpg
+<br>
+<br> Excel with the analysis ANOVA of the experiement: https://github.com/Gevorah/product-prediction/blob/master/product-prediction/product-prediction/Docs/Fase%20de%20Analisis.xlsx
+<br>
+<br>
