@@ -13,6 +13,7 @@ This software shows us reports with filters for string,quantitative and qualitat
 <img src="/product-prediction/product-prediction/Docs/photoProductPrediction2.PNG" />
 <img src="/product-prediction/product-prediction/Docs/photoProductPrediction3.PNG" />
 <img src="/product-prediction/product-prediction/Docs/photoProductPrediction4.PNG" />
+<img src="/product-prediction/product-prediction/Docs/WhatsApp Image 2021-06-08 at 10.23.54 PM.jpeg" />
 
 <br> link of the software working (1st Stage) and our explaination: https://youtu.be/HJ2ycQv8rhg
 <br> link of the software working (2nd Stage) and our explaination: https://youtu.be/GcpkGwqHyKU
